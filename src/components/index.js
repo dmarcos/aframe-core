@@ -11,7 +11,6 @@ require('../components/position');
 require('../components/raycaster');
 require('../components/rotation');
 require('../components/scale');
-require('../components/spawner');
 require('../components/sound');
 require('../components/visible');
 require('../components/wasd-controls');
