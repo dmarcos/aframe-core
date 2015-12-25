@@ -5,6 +5,7 @@ var THREE = require('../../lib/three');
 var TWEEN = require('tween.js');
 var utils = require('../utils/');
 var AEntity = require('./a-entity');
+var ANode = require('./a-node');
 var Wakelock = require('../../lib/vendor/wakelock/wakelock');
 
 var dummyDolly = new THREE.Object3D();
@@ -46,16 +47,23 @@ var AScene = module.exports = registerElement('a-scene', {
   prototype: Object.create(AEntity.prototype, {
     createdCallback: {
       value: function () {
-        this.behaviors = [];
         this.defaultLightsEnabled = true;
         this.enterVREl = null;
         this.insideIframe = window.top !== window.self;
         this.insideLoader = false;
         this.isScene = true;
-        this.materials = {};
         this.object3D = AScene.scene || new THREE.Scene();
-
         AScene.scene = this.object3D;
+        this.init();
+      }
+    },
+
+    init: {
+      value: function() {
+        this.behaviors = [];
+        this.materials = {};
+        this.stopped = true;
+        this.hasLoaded = false;
       }
     },
 
@@ -263,29 +271,50 @@ var AScene = module.exports = registerElement('a-scene', {
      * @param {object} el - object holding an entity with a camera component or THREE camera.
      */
     setActiveCamera: {
-      value: function (el) {
-        var camera;
+      value: function (camera) {
         var cameraEl;
-        var defaultCamera;
-        var defaultCameraEl;
-        // el is an entity with a camera component
-        if (el.components && el.components.camera) { 
-          camera = el.components.camera.camera; 
-          cameraEl = el;
-        } else if (el instanceof THREE.Camera) {
-          camera = el;
-          cameraEl = camera.el;
-        } else { return; }
-        this.camera = camera;
+        var defaultCameraWrapper = document.querySelector('[' + DEFAULT_CAMERA_ATTR + ']');
+        var defaultCameraEl = defaultCameraWrapper && defaultCameraWrapper.querySelector('[camera]');
+        var newCamera = camera || this.camera;
+        var oldCamera = this.camera
+        var oldCameraEl = this.camera && this.camera.el;
+        this.camera = newCamera;
+        this.stopInactiveCameras(newCamera);
+        if (cameraEl && cameraEl !== defaultCameraEl) { 
+          this.removeDefaultCamera(); 
+        }
+      }
+    },
+
+    stopInactiveCameras: {
+      value: function(currentCamera) {
+        var currentCameraEl = currentCamera && currentCamera.el;
+        var cameraEl;
+        var sceneCameras = this.querySelectorAll('[camera]');
+        var i;
+        for(i=0; i<sceneCameras.length; ++i) {
+          cameraEl = sceneCameras[i];
+          if (currentCameraEl && currentCameraEl === cameraEl) {
+            currentCameraEl.start();
+            continue; 
+          }
+          cameraEl.setAttribute('camera', 'active', false);
+          cameraEl.stop();
+        }
+      }
+    },
+
+    removeDefaultCamera: {
+      value: function() {
+        var cameraEl = this.camera && this.camera.el;
         if (!cameraEl) { return; }
-        // Removes default camera
+        // Removes default camera if any
         defaultCamera = document.querySelector('[' + DEFAULT_CAMERA_ATTR + ']');
         defaultCameraEl = defaultCamera && defaultCamera.querySelector('[camera]');
-        // Return if active camera is the default one
-        if (!defaultCamera || !defaultCameraEl ||
-             defaultCameraEl === cameraEl) { return; }
-        // User added a camera, remove default camera through DOM.
-        this.removeChild(defaultCamera);
+        // Remove default camera if any
+        if (defaultCameraEl && defaultCameraEl !== cameraEl) {
+          this.removeChild(defaultCamera);
+        }
       }
     },
 
@@ -424,6 +453,11 @@ var AScene = module.exports = registerElement('a-scene', {
       value: function (loaded) {
         var cameraWrapperEl;
         var defaultCamera;
+        var sceneCameras = this.querySelectorAll('[camera]');
+        if (sceneCameras.length !== 0) {
+          sceneCameras[sceneCameras.length - 1].setAttribute('camera', 'active', true);
+          return;
+        }
 
         if (this.camera) { return; }
 
@@ -432,7 +466,7 @@ var AScene = module.exports = registerElement('a-scene', {
         cameraWrapperEl.setAttribute('position', {x: 0, y: 1.8, z: 4});
         cameraWrapperEl.setAttribute(DEFAULT_CAMERA_ATTR, '');
         defaultCamera = document.createElement('a-entity');
-        defaultCamera.setAttribute('camera');
+        defaultCamera.setAttribute('camera', { 'active' : true });
         defaultCamera.setAttribute('wasd-controls');
         defaultCamera.setAttribute('look-controls');
         cameraWrapperEl.appendChild(defaultCamera);
@@ -595,23 +629,26 @@ var AScene = module.exports = registerElement('a-scene', {
      */
     start: {
       value: function () {
+        var self = this;
         if (this.renderStarted) { return; }
 
         this.addEventListener('loaded', function () {
-          var self = this;
+          var self = this;  
           if (this.renderStarted) { return; }
 
           this.setupLoader();
           this.resizeCanvas();
 
           if (!this.camera) { 
-            this.setupDefaultCamera(startRender);
-            return;
+            this.setupDefaultCamera(start);
+          } else {
+            start();
           }
 
-          startRender();
-
-          function startRender() {
+          function start() {
+            AEntity.prototype.start.call(self);
+            self.originalHTML = self.originalHTML || self.innerHTML;
+            self.setActiveCamera();
             // Kick off render loop.
             self.render();
             self.renderStarted = true;
@@ -619,7 +656,7 @@ var AScene = module.exports = registerElement('a-scene', {
             self.checkUrlParameters();
           }
         });
-
+        
         AEntity.prototype.load.call(this);
       }
     },
@@ -690,7 +727,23 @@ var AScene = module.exports = registerElement('a-scene', {
         this.animationFrameID = window.requestAnimationFrame(
           this.render.bind(this));
       }
+    },
+
+    reset: {
+      value: function (paused) {
+        var self = this;
+        this.paused = !!paused;
+        this.innerHTML = this.originalHTML;
+        this.hasLoaded = false;
+        this.stopped = true;
+        ANode.prototype.load.call(this, start);
+        function start() {
+          if (self.paused) { return; }
+          AEntity.prototype.start.call(self);
+        }
+      }
     }
+
   })
 });
 

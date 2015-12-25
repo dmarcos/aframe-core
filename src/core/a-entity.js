@@ -1,5 +1,6 @@
 /* global HTMLElement */
 var ANode = require('./a-node');
+var AAnimation = require('./a-animation').AAnimation;
 var components = require('./component').components;
 var debug = require('../utils/debug');
 var re = require('./a-register-element');
@@ -42,6 +43,7 @@ var proto = Object.create(ANode.prototype, {
       this.isEntity = true;
       this.states = [];
       this.components = {};
+      this.stopped = true;
       this.object3D = new THREE.Mesh();
     }
   },
@@ -190,7 +192,7 @@ var proto = Object.create(ANode.prototype, {
       var children = this.children;
       var childEntities = [];
 
-      for (var i = 0; i < this.children.length; i++) {
+      for (var i = 0; i < children.length; i++) {
         var child = children[i];
         if (child instanceof AEntity) {
           childEntities.push(child);
@@ -198,6 +200,25 @@ var proto = Object.create(ANode.prototype, {
       }
 
       return childEntities;
+    }
+  },
+
+   /**
+   * @returns {array} Return entity animations.
+   */
+  getAnimations: {
+    value: function () {
+      var children = this.children;
+      var animations = [];
+
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (child instanceof AAnimation) {
+          animations.push(child);
+        }
+      }
+
+      return animations;
     }
   },
 
@@ -352,6 +373,34 @@ var proto = Object.create(ANode.prototype, {
         }
       }
       HTMLElement.prototype.removeAttribute.call(this, attr);
+    }
+  },
+
+  start: {
+    value: function () {
+      var components = this.components;
+      var componentKeys = Object.keys(components);
+      this.stopped = false;
+      componentKeys.forEach(startComponent);
+      this.getAnimations().forEach(start);
+      this.getChildEntities().forEach(start);
+      function start(obj) { obj.start(); }
+      function startComponent(key) {
+        components[key].start(); 
+      }
+    }
+  },
+
+  stop: {
+    value: function() {
+      var components = this.components;
+      var componentKeys = Object.keys(components);
+      this.stopped = true;
+      componentKeys.forEach(stopComponent);
+      this.getAnimations().forEach(stop);
+      this.getChildEntities().forEach(stop);
+      function stop(obj) { obj.stop(); }
+      function stopComponent(key) { components[key].stop(); }
     }
   },
 

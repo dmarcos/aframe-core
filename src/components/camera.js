@@ -5,7 +5,8 @@ module.exports.Component = registerComponent('camera', {
   schema: {
     far: { default: 10000 },
     fov: { default: 80, min: 0 },
-    near: { default: 0.5, min: 0 }
+    near: { default: 0.5, min: 0 },
+    active: { default: false }
   },
 
   /**
@@ -17,19 +18,22 @@ module.exports.Component = registerComponent('camera', {
     var el = this.el;
     camera.el = el;
     el.object3D.add(camera);
-    el.sceneEl.setActiveCamera(camera);
   },
 
   /**
    * Updates three.js camera.
    */
   update: function () {
+    var el = this.el;
     var data = this.data;
     var camera = this.camera;
     camera.aspect = data.aspect || (window.innerWidth / window.innerHeight);
     camera.far = data.far;
     camera.fov = data.fov;
     camera.near = data.near;
+    if (data.active) {
+      el.sceneEl.setActiveCamera(camera);
+    }
     camera.updateProjectionMatrix();
   }
 });

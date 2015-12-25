@@ -221,7 +221,8 @@ module.exports.AAnimation = registerElement('a-animation', {
 
     start: {
       value: function () {
-        if (this.isRunning) { return; }
+        var sceneEl = this.el.sceneEl;
+        if (this.isRunning || sceneEl.paused) { return; }
         this.tween = this.getTween();
         this.isRunning = true;
         this.tween.start();

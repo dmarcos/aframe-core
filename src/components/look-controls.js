@@ -13,16 +13,40 @@ module.exports.Component = registerComponent('look-controls', {
 
   init: function () {
     var scene = this.el.sceneEl;
-    this.setupMouseControls();
-    this.setupHMDControls();
-    this.attachEventListeners();
-    scene.addBehavior(this);
     this.previousPosition = new THREE.Vector3();
     this.deltaPosition = new THREE.Vector3();
+    this.bindMethods();
+    this.setupMouseControls();
+    this.setupHMDControls();
+  },
+
+  bindMethods: function() {
+    this.onMouseDown = this.onMouseDown.bind(this);
+    this.onMouseMove = this.onMouseMove.bind(this);
+    this.releaseMouse = this.releaseMouse.bind(this);
+    this.onTouchStart = this.onTouchStart.bind(this);
+    this.onTouchMove = this.onTouchMove.bind(this);
+    this.onTouchEnd = this.onTouchEnd.bind(this);
+  },
+
+  start: function() {
+    var scene = this.el.sceneEl;
+    this.previousPosition.set(0, 0, 0);
+    this.attachEventListeners();
+    scene.addBehavior(this);
+  },
+
+  stop: function() {
+    var scene = this.el.sceneEl;
+    this.removeEventListeners();
+    scene.removeBehavior(this);
+  },
+
+  remove: function() {
+    this.stop();
   },
 
   setupMouseControls: function () {
-    this.canvasEl = document.querySelector('a-scene').canvas;
     // The canvas where the scene is painted
     this.mouseDown = false;
     this.pitchObject = new THREE.Object3D();
@@ -42,15 +66,32 @@ module.exports.Component = registerComponent('look-controls', {
     var canvasEl = document.querySelector('a-scene').canvas;
 
     // Mouse Events
-    canvasEl.addEventListener('mousedown', this.onMouseDown.bind(this), true);
-    canvasEl.addEventListener('mousemove', this.onMouseMove.bind(this), true);
-    canvasEl.addEventListener('mouseup', this.releaseMouse.bind(this), true);
-    canvasEl.addEventListener('mouseout', this.releaseMouse.bind(this), true);
+    canvasEl.addEventListener('mousedown', this.onMouseDown, false);
+    canvasEl.addEventListener('mousemove', this.onMouseMove, false);
+    canvasEl.addEventListener('mouseup', this.releaseMouse, false);
+    canvasEl.addEventListener('mouseout', this.releaseMouse, false);
 
     // Touch events
-    canvasEl.addEventListener('touchstart', this.onTouchStart.bind(this));
-    canvasEl.addEventListener('touchmove', this.onTouchMove.bind(this));
-    canvasEl.addEventListener('touchend', this.onTouchEnd.bind(this));
+    canvasEl.addEventListener('touchstart', this.onTouchStart);
+    canvasEl.addEventListener('touchmove', this.onTouchMove);
+    canvasEl.addEventListener('touchend', this.onTouchEnd);
+  },
+
+  removeEventListeners: function () {
+    var sceneEl = this.el.sceneEl;
+    var canvasEl = canvasEl && canvasEl.canvas;
+    if (!canvasEl) { return; }
+
+    // Mouse Events
+    canvasEl.removeEventListener('mousedown', this.onMouseDown);
+    canvasEl.removeEventListener('mousemove', this.onMouseMove);
+    canvasEl.removeEventListener('mouseup', this.releaseMouse);
+    canvasEl.removeEventListener('mouseout', this.releaseMouse);
+
+    // Touch events
+    canvasEl.removeEventListener('touchstart', this.onTouchStart);
+    canvasEl.removeEventListener('touchmove', this.onTouchMove);
+    canvasEl.removeEventListener('touchend', this.onTouchEnd);
   },
 
   update: function () {
