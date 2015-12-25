@@ -456,7 +456,7 @@ var AScene = module.exports = registerElement('a-scene', {
         var sceneCameras = this.querySelectorAll('[camera]');
         if (sceneCameras.length !== 0) {
           sceneCameras[sceneCameras.length - 1].setAttribute('camera', 'active', true);
-          return;
+          loaded();
         }
 
         if (this.camera) { return; }

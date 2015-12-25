@@ -78,8 +78,7 @@ module.exports.Component = registerComponent('look-controls', {
   },
 
   removeEventListeners: function () {
-    var sceneEl = this.el.sceneEl;
-    var canvasEl = canvasEl && canvasEl.canvas;
+    var canvasEl = document.querySelector('a-scene').canvas;
     if (!canvasEl) { return; }
 
     // Mouse Events
