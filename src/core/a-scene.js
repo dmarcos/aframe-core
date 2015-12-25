@@ -272,30 +272,33 @@ var AScene = module.exports = registerElement('a-scene', {
      */
     setActiveCamera: {
       value: function (camera) {
-        var cameraEl;
         var defaultCameraWrapper = document.querySelector('[' + DEFAULT_CAMERA_ATTR + ']');
         var defaultCameraEl = defaultCameraWrapper && defaultCameraWrapper.querySelector('[camera]');
         var newCamera = camera || this.camera;
-        var oldCamera = this.camera
-        var oldCameraEl = this.camera && this.camera.el;
-        this.camera = newCamera;
-        this.stopInactiveCameras(newCamera);
-        if (cameraEl && cameraEl !== defaultCameraEl) { 
-          this.removeDefaultCamera(); 
+        var newCameraEl;
+        if (newCamera instanceof AEntity) {
+          newCamera.setAttribute('camera', 'active', true);
+          newCameraEl = newCamera;
+          if (newCamera !== defaultCameraEl) { 
+            this.removeDefaultCamera(); 
+          }
+        } else if (newCamera instanceof THREE.Camera) {
+          newCameraEl = newCamera.el;
+          this.camera = newCamera;
         }
+        this.updateCameras(newCameraEl);
       }
     },
 
-    stopInactiveCameras: {
-      value: function(currentCamera) {
-        var currentCameraEl = currentCamera && currentCamera.el;
+    updateCameras: {
+      value: function(activeCamera) {
         var cameraEl;
         var sceneCameras = this.querySelectorAll('[camera]');
         var i;
-        for(i=0; i<sceneCameras.length; ++i) {
+        for(i=0; i < sceneCameras.length; ++i) {
           cameraEl = sceneCameras[i];
-          if (currentCameraEl && currentCameraEl === cameraEl) {
-            currentCameraEl.start();
+          if (activeCamera === cameraEl) {
+            activeCamera.start();
             continue; 
           }
           cameraEl.setAttribute('camera', 'active', false);
