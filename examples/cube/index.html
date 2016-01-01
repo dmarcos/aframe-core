@@ -4,22 +4,13 @@
     <meta charset="utf-8">
     <title>Cube</title>
     <meta name="description" content="Cube - A-Frame Core">
-    <script src="../../build/aframe-core.js"></script>
+    <script src="../../dist/aframe-core.js"></script>
     <style>
       body { background-color: black; }
     </style>
   </head>
   <body>
     <a-scene stats="true">
-      <a-entity position="0 0 6">
-        <a-entity id="camera1" camera look-controls wasd-controls></a-entity>
-      </a-entity>
-      <a-entity position="0 0 6">
-        <a-entity id="camera2" camera look-controls wasd-controls></a-entity>
-      </a-entity>
-      <a-entity position="4 1 2">
-        <a-entity id="camera3" camera="active: true" look-controls wasd-controls></a-entity>
-      </a-entity>
       <!-- Cube -->
       <a-entity position="0 0 -10" rotation="45 30 0"
                 geometry="primitive: box; height: 8; width: 8; depth: 8;"
