@@ -1,6 +1,6 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.aframeCore = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.aframeCore = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 (function (global){
-var THREE = global.THREE = require('three-dev');
+var THREE = global.THREE = _dereq_('three-dev');
 
 // Allow cross-origin images to be loaded.
 if (THREE.TextureLoader) {
@@ -9,17 +9,18 @@ if (THREE.TextureLoader) {
 
 // TODO: Eventually include these only if they are needed by a component.
 
-require('../node_modules/three-dev/examples/js/loaders/OBJLoader');  // THREE.OBJLoader
-require('../node_modules/three-dev/examples/js/loaders/ColladaLoader');  // THREE.ColladaLoader
-require('../lib/vendor/Raycaster');  // THREE.Raycaster
-require('../node_modules/three-dev/examples/js/controls/VRControls');  // THREE.VRControls
-require('../node_modules/three-dev/examples/js/effects/VREffect');  // THREE.VREffect
+_dereq_('../node_modules/three-dev/examples/js/loaders/OBJLoader');  // THREE.OBJLoader
+_dereq_('../node_modules/three-dev/examples/js/loaders/MTLLoader');  // THREE.MTLLoader
+_dereq_('../node_modules/three-dev/examples/js/loaders/ColladaLoader');  // THREE.ColladaLoader
+_dereq_('../lib/vendor/Raycaster');  // THREE.Raycaster
+_dereq_('../node_modules/three-dev/examples/js/controls/VRControls');  // THREE.VRControls
+_dereq_('../node_modules/three-dev/examples/js/effects/VREffect');  // THREE.VREffect
 
 module.exports = THREE;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../lib/vendor/Raycaster":2,"../node_modules/three-dev/examples/js/controls/VRControls":19,"../node_modules/three-dev/examples/js/effects/VREffect":20,"../node_modules/three-dev/examples/js/loaders/ColladaLoader":21,"../node_modules/three-dev/examples/js/loaders/OBJLoader":22,"three-dev":18}],2:[function(require,module,exports){
+},{"../lib/vendor/Raycaster":2,"../node_modules/three-dev/examples/js/controls/VRControls":19,"../node_modules/three-dev/examples/js/effects/VREffect":20,"../node_modules/three-dev/examples/js/loaders/ColladaLoader":21,"../node_modules/three-dev/examples/js/loaders/MTLLoader":22,"../node_modules/three-dev/examples/js/loaders/OBJLoader":23,"three-dev":18}],2:[function(_dereq_,module,exports){
 /**
  * @author mrdoob / http://mrdoob.com/
  * @author bhouston / http://clara.io/
@@ -156,7 +157,7 @@ module.exports = THREE;
 
 }( THREE ) );
 
-},{}],3:[function(require,module,exports){
+},{}],3:[function(_dereq_,module,exports){
 // performance.now() polyfill from https://gist.github.com/paulirish/5438650
 
 (function(){
@@ -584,7 +585,7 @@ var rStats = function rStats( settings ) {
 };
 
 if (typeof module !== "undefined") { module.exports = rStats; }
-},{}],4:[function(require,module,exports){
+},{}],4:[function(_dereq_,module,exports){
 /*
  * Copyright 2015 Google Inc. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -646,7 +647,7 @@ Util.isLandscapeMode = function() {
 
 module.exports = Util;
 
-},{}],5:[function(require,module,exports){
+},{}],5:[function(_dereq_,module,exports){
 /*
  * Copyright 2015 Google Inc. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -662,7 +663,7 @@ module.exports = Util;
  * limitations under the License.
  */
 
-var Util = require('./util.js');
+var Util = _dereq_('./util.js');
 
 /**
  * Android and iOS compatible wakelock implementation.
@@ -722,7 +723,7 @@ function getWakeLock() {
 
 module.exports = getWakeLock();
 
-},{"./util.js":4}],6:[function(require,module,exports){
+},{"./util.js":4}],6:[function(_dereq_,module,exports){
 'use strict';
 // For more information about browser field, check out the browser field at https://github.com/substack/browserify-handbook#browser-field.
 
@@ -774,7 +775,7 @@ module.exports = {
     }
 };
 
-},{}],7:[function(require,module,exports){
+},{}],7:[function(_dereq_,module,exports){
 /**
  * Expose `requestAnimationFrame()`.
  */
@@ -810,7 +811,7 @@ exports.cancel = function(id){
   cancel.call(window, id);
 };
 
-},{}],8:[function(require,module,exports){
+},{}],8:[function(_dereq_,module,exports){
 
 /**
  * This is the web browser implementation of `debug()`.
@@ -818,7 +819,7 @@ exports.cancel = function(id){
  * Expose `debug()` as the module.
  */
 
-exports = module.exports = require('./debug');
+exports = module.exports = _dereq_('./debug');
 exports.log = log;
 exports.formatArgs = formatArgs;
 exports.save = save;
@@ -980,7 +981,7 @@ function localstorage(){
   } catch (e) {}
 }
 
-},{"./debug":9}],9:[function(require,module,exports){
+},{"./debug":9}],9:[function(_dereq_,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -994,7 +995,7 @@ exports.coerce = coerce;
 exports.disable = disable;
 exports.enable = enable;
 exports.enabled = enabled;
-exports.humanize = require('ms');
+exports.humanize = _dereq_('ms');
 
 /**
  * The currently active debug mode names, and names to skip.
@@ -1179,10 +1180,10 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":12}],10:[function(require,module,exports){
+},{"ms":12}],10:[function(_dereq_,module,exports){
 /*! (C) WebReflection Mit Style License */
 (function(e,t,n,r){"use strict";function rt(e,t){for(var n=0,r=e.length;n<r;n++)vt(e[n],t)}function it(e){for(var t=0,n=e.length,r;t<n;t++)r=e[t],nt(r,b[ot(r)])}function st(e){return function(t){j(t)&&(vt(t,e),rt(t.querySelectorAll(w),e))}}function ot(e){var t=e.getAttribute("is"),n=e.nodeName.toUpperCase(),r=S.call(y,t?v+t.toUpperCase():d+n);return t&&-1<r&&!ut(n,t)?-1:r}function ut(e,t){return-1<w.indexOf(e+'[is="'+t+'"]')}function at(e){var t=e.currentTarget,n=e.attrChange,r=e.attrName,i=e.target;Q&&(!i||i===t)&&t.attributeChangedCallback&&r!=="style"&e.prevValue!==e.newValue&&t.attributeChangedCallback(r,n===e[a]?null:e.prevValue,n===e[l]?null:e.newValue)}function ft(e){var t=st(e);return function(e){X.push(t,e.target)}}function lt(e){K&&(K=!1,e.currentTarget.removeEventListener(h,lt)),rt((e.target||t).querySelectorAll(w),e.detail===o?o:s),B&&pt()}function ct(e,t){var n=this;q.call(n,e,t),G.call(n,{target:n})}function ht(e,t){D(e,t),et?et.observe(e,z):(J&&(e.setAttribute=ct,e[i]=Z(e),e.addEventListener(p,G)),e.addEventListener(c,at)),e.createdCallback&&Q&&(e.created=!0,e.createdCallback(),e.created=!1)}function pt(){for(var e,t=0,n=F.length;t<n;t++)e=F[t],E.contains(e)||(n--,F.splice(t--,1),vt(e,o))}function dt(e){throw new Error("A "+e+" type is already registered")}function vt(e,t){var n,r=ot(e);-1<r&&(tt(e,b[r]),r=0,t===s&&!e[s]?(e[o]=!1,e[s]=!0,r=1,B&&S.call(F,e)<0&&F.push(e)):t===o&&!e[o]&&(e[s]=!1,e[o]=!0,r=1),r&&(n=e[t+"Callback"])&&n.call(e))}if(r in t)return;var i="__"+r+(Math.random()*1e5>>0),s="attached",o="detached",u="extends",a="ADDITION",f="MODIFICATION",l="REMOVAL",c="DOMAttrModified",h="DOMContentLoaded",p="DOMSubtreeModified",d="<",v="=",m=/^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+$/,g=["ANNOTATION-XML","COLOR-PROFILE","FONT-FACE","FONT-FACE-SRC","FONT-FACE-URI","FONT-FACE-FORMAT","FONT-FACE-NAME","MISSING-GLYPH"],y=[],b=[],w="",E=t.documentElement,S=y.indexOf||function(e){for(var t=this.length;t--&&this[t]!==e;);return t},x=n.prototype,T=x.hasOwnProperty,N=x.isPrototypeOf,C=n.defineProperty,k=n.getOwnPropertyDescriptor,L=n.getOwnPropertyNames,A=n.getPrototypeOf,O=n.setPrototypeOf,M=!!n.__proto__,_=n.create||function mt(e){return e?(mt.prototype=e,new mt):this},D=O||(M?function(e,t){return e.__proto__=t,e}:L&&k?function(){function e(e,t){for(var n,r=L(t),i=0,s=r.length;i<s;i++)n=r[i],T.call(e,n)||C(e,n,k(t,n))}return function(t,n){do e(t,n);while((n=A(n))&&!N.call(n,t));return t}}():function(e,t){for(var n in t)e[n]=t[n];return e}),P=e.MutationObserver||e.WebKitMutationObserver,H=(e.HTMLElement||e.Element||e.Node).prototype,B=!N.call(H,E),j=B?function(e){return e.nodeType===1}:function(e){return N.call(H,e)},F=B&&[],I=H.cloneNode,q=H.setAttribute,R=H.removeAttribute,U=t.createElement,z=P&&{attributes:!0,characterData:!0,attributeOldValue:!0},W=P||function(e){J=!1,E.removeEventListener(c,W)},X,V=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,10)},$=!1,J=!0,K=!0,Q=!0,G,Y,Z,et,tt,nt;O||M?(tt=function(e,t){N.call(t,e)||ht(e,t)},nt=ht):(tt=function(e,t){e[i]||(e[i]=n(!0),ht(e,t))},nt=tt),B?(J=!1,function(){var e=k(H,"addEventListener"),t=e.value,n=function(e){var t=new CustomEvent(c,{bubbles:!0});t.attrName=e,t.prevValue=this.getAttribute(e),t.newValue=null,t[l]=t.attrChange=2,R.call(this,e),this.dispatchEvent(t)},r=function(e,t){var n=this.hasAttribute(e),r=n&&this.getAttribute(e),i=new CustomEvent(c,{bubbles:!0});q.call(this,e,t),i.attrName=e,i.prevValue=n?r:null,i.newValue=t,n?i[f]=i.attrChange=1:i[a]=i.attrChange=0,this.dispatchEvent(i)},s=function(e){var t=e.currentTarget,n=t[i],r=e.propertyName,s;n.hasOwnProperty(r)&&(n=n[r],s=new CustomEvent(c,{bubbles:!0}),s.attrName=n.name,s.prevValue=n.value||null,s.newValue=n.value=t[r]||null,s.prevValue==null?s[a]=s.attrChange=0:s[f]=s.attrChange=1,t.dispatchEvent(s))};e.value=function(e,o,u){e===c&&this.attributeChangedCallback&&this.setAttribute!==r&&(this[i]={className:{name:"class",value:this.className}},this.setAttribute=r,this.removeAttribute=n,t.call(this,"propertychange",s)),t.call(this,e,o,u)},C(H,"addEventListener",e)}()):P||(E.addEventListener(c,W),E.setAttribute(i,1),E.removeAttribute(i),J&&(G=function(e){var t=this,n,r,s;if(t===e.target){n=t[i],t[i]=r=Z(t);for(s in r){if(!(s in n))return Y(0,t,s,n[s],r[s],a);if(r[s]!==n[s])return Y(1,t,s,n[s],r[s],f)}for(s in n)if(!(s in r))return Y(2,t,s,n[s],r[s],l)}},Y=function(e,t,n,r,i,s){var o={attrChange:e,currentTarget:t,attrName:n,prevValue:r,newValue:i};o[s]=e,at(o)},Z=function(e){for(var t,n,r={},i=e.attributes,s=0,o=i.length;s<o;s++)t=i[s],n=t.name,n!=="setAttribute"&&(r[n]=t.value);return r})),t[r]=function(n,r){c=n.toUpperCase(),$||($=!0,P?(et=function(e,t){function n(e,t){for(var n=0,r=e.length;n<r;t(e[n++]));}return new P(function(r){for(var i,s,o,u=0,a=r.length;u<a;u++)i=r[u],i.type==="childList"?(n(i.addedNodes,e),n(i.removedNodes,t)):(s=i.target,Q&&s.attributeChangedCallback&&i.attributeName!=="style"&&(o=s.getAttribute(i.attributeName),o!==i.oldValue&&s.attributeChangedCallback(i.attributeName,i.oldValue,o)))})}(st(s),st(o)),et.observe(t,{childList:!0,subtree:!0})):(X=[],V(function E(){while(X.length)X.shift().call(null,X.shift());V(E)}),t.addEventListener("DOMNodeInserted",ft(s)),t.addEventListener("DOMNodeRemoved",ft(o))),t.addEventListener(h,lt),t.addEventListener("readystatechange",lt),t.createElement=function(e,n){var r=U.apply(t,arguments),i=""+e,s=S.call(y,(n?v:d)+(n||i).toUpperCase()),o=-1<s;return n&&(r.setAttribute("is",n=n.toLowerCase()),o&&(o=ut(i.toUpperCase(),n))),Q=!t.createElement.innerHTMLHelper,o&&nt(r,b[s]),r},H.cloneNode=function(e){var t=I.call(this,!!e),n=ot(t);return-1<n&&nt(t,b[n]),e&&it(t.querySelectorAll(w)),t}),-2<S.call(y,v+c)+S.call(y,d+c)&&dt(n);if(!m.test(c)||-1<S.call(g,c))throw new Error("The type "+n+" is invalid");var i=function(){return f?t.createElement(l,c):t.createElement(l)},a=r||x,f=T.call(a,u),l=f?r[u].toUpperCase():c,c,p;return f&&-1<S.call(y,d+l)&&dt(l),p=y.push((f?v:d)+c)-1,w=w.concat(w.length?",":"",f?l+'[is="'+n.toLowerCase()+'"]':l),i.prototype=b[p]=T.call(a,"prototype")?a.prototype:_(H),rt(t.querySelectorAll(w),s),i}})(window,document,Object,"registerElement");
-},{}],11:[function(require,module,exports){
+},{}],11:[function(_dereq_,module,exports){
 (function (process,global){
 /*!
  * @overview es6-promise - a tiny implementation of Promises/A+.
@@ -1314,7 +1315,7 @@ function coerce(val) {
 
     function lib$es6$promise$asap$$attemptVertx() {
       try {
-        var r = require;
+        var r = _dereq_;
         var vertx = r('vertx');
         lib$es6$promise$asap$$vertxNext = vertx.runOnLoop || vertx.runOnContext;
         return lib$es6$promise$asap$$useVertxTimer();
@@ -1331,7 +1332,7 @@ function coerce(val) {
       lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useMutationObserver();
     } else if (lib$es6$promise$asap$$isWorker) {
       lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useMessageChannel();
-    } else if (lib$es6$promise$asap$$browserWindow === undefined && typeof require === 'function') {
+    } else if (lib$es6$promise$asap$$browserWindow === undefined && typeof _dereq_ === 'function') {
       lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$attemptVertx();
     } else {
       lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useSetTimeout();
@@ -2152,9 +2153,9 @@ function coerce(val) {
 }).call(this);
 
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this,_dereq_('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"_process":15}],12:[function(require,module,exports){
+},{"_process":15}],12:[function(_dereq_,module,exports){
 /**
  * Helpers.
  */
@@ -2281,7 +2282,7 @@ function plural(ms, n, name) {
   return Math.ceil(ms / n) + ' ' + name + 's';
 }
 
-},{}],13:[function(require,module,exports){
+},{}],13:[function(_dereq_,module,exports){
 /* eslint-disable no-unused-vars */
 'use strict';
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -2322,7 +2323,7 @@ module.exports = Object.assign || function (target, source) {
 	return to;
 };
 
-},{}],14:[function(require,module,exports){
+},{}],14:[function(_dereq_,module,exports){
 (function (global){
 var performance = global.performance || {};
 
@@ -2355,7 +2356,7 @@ module.exports = present;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],15:[function(require,module,exports){
+},{}],15:[function(_dereq_,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -2448,11 +2449,11 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],16:[function(require,module,exports){
+},{}],16:[function(_dereq_,module,exports){
 'use strict';
 
-var raf = require('raf');
-var now = require('time-now');
+var raf = _dereq_('raf');
+var now = _dereq_('time-now');
 
 exports = module.exports = interval;
 function interval(delay, fn, ctx) {
@@ -2478,7 +2479,7 @@ function clearInterval(data) {
   raf.cancel(data.id);
 }
 
-},{"raf":7,"time-now":23}],17:[function(require,module,exports){
+},{"raf":7,"time-now":24}],17:[function(_dereq_,module,exports){
 /*
 
 style-attr
@@ -2552,7 +2553,7 @@ module.exports.parse = parse;
 module.exports.stringify = stringify;
 module.exports.normalize = normalize;
 
-},{}],18:[function(require,module,exports){
+},{}],18:[function(_dereq_,module,exports){
 // File:src/Three.js
 
 /**
@@ -42738,7 +42739,7 @@ THREE.MorphBlendMesh.prototype.update = function ( delta ) {
 };
 
 
-},{}],19:[function(require,module,exports){
+},{}],19:[function(_dereq_,module,exports){
 /**
  * @author dmarcos / https://github.com/dmarcos
  * @author mrdoob / http://mrdoob.com
@@ -42865,7 +42866,7 @@ THREE.VRControls = function ( object, onError ) {
 
 };
 
-},{}],20:[function(require,module,exports){
+},{}],20:[function(_dereq_,module,exports){
 /**
  * @author dmarcos / https://github.com/dmarcos
  * @author mrdoob / http://mrdoob.com
@@ -43093,7 +43094,7 @@ THREE.VREffect = function ( renderer, onError ) {
 
 };
 
-},{}],21:[function(require,module,exports){
+},{}],21:[function(_dereq_,module,exports){
 /**
 * @author Tim Knip / http://www.floorplanner.com/ / tim at floorplanner.com
 * @author Tony Parisi / http://www.tonyparisi.com/
@@ -48596,7 +48597,428 @@ THREE.ColladaLoader = function () {
 
 };
 
-},{}],22:[function(require,module,exports){
+},{}],22:[function(_dereq_,module,exports){
+/**
+ * Loads a Wavefront .mtl file specifying materials
+ *
+ * @author angelxuanchang
+ */
+
+THREE.MTLLoader = function( manager ) {
+
+	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
+
+};
+
+THREE.MTLLoader.prototype = {
+
+	constructor: THREE.MTLLoader,
+
+	load: function ( url, onLoad, onProgress, onError ) {
+
+		var scope = this;
+
+		var loader = new THREE.XHRLoader( this.manager );
+		loader.setPath( this.path );
+		loader.load( url, function ( text ) {
+
+			onLoad( scope.parse( text ) );
+
+		}, onProgress, onError );
+
+	},
+
+	setPath: function ( value ) {
+
+		this.path = value;
+
+	},
+
+	setBaseUrl: function( value ) {
+
+		// TODO: Merge with setPath()? Or rename to setTexturePath?
+
+		this.baseUrl = value;
+
+	},
+
+	setCrossOrigin: function ( value ) {
+
+		this.crossOrigin = value;
+
+	},
+
+	setMaterialOptions: function ( value ) {
+
+		this.materialOptions = value;
+
+	},
+
+	/**
+	 * Parses loaded MTL file
+	 * @param text - Content of MTL file
+	 * @return {THREE.MTLLoader.MaterialCreator}
+	 */
+	parse: function ( text ) {
+
+		var lines = text.split( "\n" );
+		var info = {};
+		var delimiter_pattern = /\s+/;
+		var materialsInfo = {};
+
+		for ( var i = 0; i < lines.length; i ++ ) {
+
+			var line = lines[ i ];
+			line = line.trim();
+
+			if ( line.length === 0 || line.charAt( 0 ) === '#' ) {
+
+				// Blank line or comment ignore
+				continue;
+
+			}
+
+			var pos = line.indexOf( ' ' );
+
+			var key = ( pos >= 0 ) ? line.substring( 0, pos ) : line;
+			key = key.toLowerCase();
+
+			var value = ( pos >= 0 ) ? line.substring( pos + 1 ) : "";
+			value = value.trim();
+
+			if ( key === "newmtl" ) {
+
+				// New material
+
+				info = { name: value };
+				materialsInfo[ value ] = info;
+
+			} else if ( info ) {
+
+				if ( key === "ka" || key === "kd" || key === "ks" ) {
+
+					var ss = value.split( delimiter_pattern, 3 );
+					info[ key ] = [ parseFloat( ss[ 0 ] ), parseFloat( ss[ 1 ] ), parseFloat( ss[ 2 ] ) ];
+
+				} else {
+
+					info[ key ] = value;
+
+				}
+
+			}
+
+		}
+
+		var materialCreator = new THREE.MTLLoader.MaterialCreator( this.baseUrl, this.materialOptions );
+		materialCreator.setCrossOrigin( this.crossOrigin );
+		materialCreator.setManager( this.manager );
+		materialCreator.setMaterials( materialsInfo );
+		return materialCreator;
+
+	}
+
+};
+
+/**
+ * Create a new THREE-MTLLoader.MaterialCreator
+ * @param baseUrl - Url relative to which textures are loaded
+ * @param options - Set of options on how to construct the materials
+ *                  side: Which side to apply the material
+ *                        THREE.FrontSide (default), THREE.BackSide, THREE.DoubleSide
+ *                  wrap: What type of wrapping to apply for textures
+ *                        THREE.RepeatWrapping (default), THREE.ClampToEdgeWrapping, THREE.MirroredRepeatWrapping
+ *                  normalizeRGB: RGBs need to be normalized to 0-1 from 0-255
+ *                                Default: false, assumed to be already normalized
+ *                  ignoreZeroRGBs: Ignore values of RGBs (Ka,Kd,Ks) that are all 0's
+ *                                  Default: false
+ * @constructor
+ */
+
+THREE.MTLLoader.MaterialCreator = function( baseUrl, options ) {
+
+	this.baseUrl = baseUrl;
+	this.options = options;
+	this.materialsInfo = {};
+	this.materials = {};
+	this.materialsArray = [];
+	this.nameLookup = {};
+
+	this.side = ( this.options && this.options.side ) ? this.options.side : THREE.FrontSide;
+	this.wrap = ( this.options && this.options.wrap ) ? this.options.wrap : THREE.RepeatWrapping;
+
+};
+
+THREE.MTLLoader.MaterialCreator.prototype = {
+
+	constructor: THREE.MTLLoader.MaterialCreator,
+
+	setCrossOrigin: function ( value ) {
+
+		this.crossOrigin = value;
+
+	},
+
+	setManager: function ( value ) {
+
+		this.manager = value;
+
+	},
+
+	setMaterials: function( materialsInfo ) {
+
+		this.materialsInfo = this.convert( materialsInfo );
+		this.materials = {};
+		this.materialsArray = [];
+		this.nameLookup = {};
+
+	},
+
+	convert: function( materialsInfo ) {
+
+		if ( ! this.options ) return materialsInfo;
+
+		var converted = {};
+
+		for ( var mn in materialsInfo ) {
+
+			// Convert materials info into normalized form based on options
+
+			var mat = materialsInfo[ mn ];
+
+			var covmat = {};
+
+			converted[ mn ] = covmat;
+
+			for ( var prop in mat ) {
+
+				var save = true;
+				var value = mat[ prop ];
+				var lprop = prop.toLowerCase();
+
+				switch ( lprop ) {
+
+					case 'kd':
+					case 'ka':
+					case 'ks':
+
+						// Diffuse color (color under white light) using RGB values
+
+						if ( this.options && this.options.normalizeRGB ) {
+
+							value = [ value[ 0 ] / 255, value[ 1 ] / 255, value[ 2 ] / 255 ];
+
+						}
+
+						if ( this.options && this.options.ignoreZeroRGBs ) {
+
+							if ( value[ 0 ] === 0 && value[ 1 ] === 0 && value[ 1 ] === 0 ) {
+
+								// ignore
+
+								save = false;
+
+							}
+
+						}
+
+						break;
+
+					default:
+
+						break;
+				}
+
+				if ( save ) {
+
+					covmat[ lprop ] = value;
+
+				}
+
+			}
+
+		}
+
+		return converted;
+
+	},
+
+	preload: function () {
+
+		for ( var mn in this.materialsInfo ) {
+
+			this.create( mn );
+
+		}
+
+	},
+
+	getIndex: function( materialName ) {
+
+		return this.nameLookup[ materialName ];
+
+	},
+
+	getAsArray: function() {
+
+		var index = 0;
+
+		for ( var mn in this.materialsInfo ) {
+
+			this.materialsArray[ index ] = this.create( mn );
+			this.nameLookup[ mn ] = index;
+			index ++;
+
+		}
+
+		return this.materialsArray;
+
+	},
+
+	create: function ( materialName ) {
+
+		if ( this.materials[ materialName ] === undefined ) {
+
+			this.createMaterial_( materialName );
+
+		}
+
+		return this.materials[ materialName ];
+
+	},
+
+	createMaterial_: function ( materialName ) {
+
+		// Create material
+
+		var mat = this.materialsInfo[ materialName ];
+		var params = {
+
+			name: materialName,
+			side: this.side
+
+		};
+
+		for ( var prop in mat ) {
+
+			var value = mat[ prop ];
+
+			if ( value === '' ) {
+				continue;
+			}
+
+			switch ( prop.toLowerCase() ) {
+
+				// Ns is material specular exponent
+
+				case 'kd':
+
+					// Diffuse color (color under white light) using RGB values
+
+					params[ 'color' ] = new THREE.Color().fromArray( value );
+
+					break;
+
+				case 'ks':
+
+					// Specular color (color when light is reflected from shiny surface) using RGB values
+					params[ 'specular' ] = new THREE.Color().fromArray( value );
+
+					break;
+
+				case 'map_kd':
+
+					// Diffuse texture map
+
+					params[ 'map' ] = this.loadTexture( this.baseUrl + value );
+					params[ 'map' ].wrapS = this.wrap;
+					params[ 'map' ].wrapT = this.wrap;
+
+					break;
+
+				case 'ns':
+
+					// The specular exponent (defines the focus of the specular highlight)
+					// A high exponent results in a tight, concentrated highlight. Ns values normally range from 0 to 1000.
+
+					params[ 'shininess' ] = parseFloat( value );
+
+					break;
+
+				case 'd':
+
+					if ( value < 1 ) {
+
+						params[ 'opacity' ] = value;
+						params[ 'transparent' ] = true;
+
+					}
+
+					break;
+
+				case 'Tr':
+
+					if ( value > 0 ) {
+
+						params[ 'opacity' ] = 1 - value;
+						params[ 'transparent' ] = true;
+
+					}
+
+					break;
+
+				case 'map_bump':
+				case 'bump':
+
+					// Bump texture map
+
+					if ( params[ 'bumpMap' ] ) break; // Avoid loading twice.
+
+					params[ 'bumpMap' ] = this.loadTexture( this.baseUrl + value );
+					params[ 'bumpMap' ].wrapS = this.wrap;
+					params[ 'bumpMap' ].wrapT = this.wrap;
+
+					break;
+
+				default:
+					break;
+
+			}
+
+		}
+
+		this.materials[ materialName ] = new THREE.MeshPhongMaterial( params );
+		return this.materials[ materialName ];
+
+	},
+
+
+	loadTexture: function ( url, mapping, onLoad, onProgress, onError ) {
+
+		var texture;
+		var loader = THREE.Loader.Handlers.get( url );
+		var manager = ( this.manager !== undefined ) ? this.manager : THREE.DefaultLoadingManager;
+
+		if ( loader === null ) {
+
+			loader = new THREE.TextureLoader( manager );
+
+		}
+
+		if ( loader.setCrossOrigin ) loader.setCrossOrigin( this.crossOrigin );
+		texture = loader.load( url, onLoad, onProgress, onError );
+
+		if ( mapping !== undefined ) texture.mapping = mapping;
+
+		return texture;
+
+	}
+
+};
+
+THREE.EventDispatcher.prototype.apply( THREE.MTLLoader.prototype );
+
+},{}],23:[function(_dereq_,module,exports){
 /**
  * @author mrdoob / http://mrdoob.com/
  */
@@ -49001,7 +49423,7 @@ THREE.OBJLoader.prototype = {
 
 };
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = (function() {
@@ -49015,7 +49437,7 @@ module.exports = (function() {
   }
 }());
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(_dereq_,module,exports){
 /**
  * Tween.js - Licensed under the MIT license
  * https://github.com/sole/tween.js
@@ -49808,8 +50230,8 @@ TWEEN.Interpolation = {
 
 } )( this );
 
-},{}],25:[function(require,module,exports){
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+},{}],26:[function(_dereq_,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof _dereq_=="function"&&_dereq_;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof _dereq_=="function"&&_dereq_;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 /*
  * Copyright 2015 Google Inc. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53059,13 +53481,13 @@ module.exports = WebVRPolyfill;
 
 },{"./base.js":1,"./cardboard-hmd-vr-device.js":2,"./fusion-position-sensor-vr-device.js":4,"./mouse-keyboard-position-sensor-vr-device.js":6}]},{},[5]);
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(_dereq_,module,exports){
 module.exports={
   "name": "aframe-core",
   "version": "0.1.3",
   "homepage": "https://github.com/aframevr/aframe-core",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/aframe-core.js",
   "dependencies": {
     "browserify-css": "^0.8.2",
     "debug": "^2.2.0",
@@ -53081,9 +53503,10 @@ module.exports={
   },
   "devDependencies": {
     "browserify": "^11.0.1",
+    "browserify-derequire": "^0.9.4",
     "budo": "^7.0.2",
-    "copyfiles": "0.2.1",
     "chai-shallow-deep-equal": "^1.3.0",
+    "copyfiles": "0.2.1",
     "exorcist": "^0.4.0",
     "gh-pages": "^0.6.0",
     "husky": "^0.10.1",
@@ -53103,12 +53526,13 @@ module.exports={
     "replace": "^0.3.0",
     "rimraf": "2.5.0",
     "semistandard": "^7.0.2",
+    "standard-reporter": "^1.0.5",
     "uglifyjs": "^2.4.10"
   },
   "scripts": {
     "start": "npm run dev",
     "dev": "npm run build && node ./scripts/budo",
-    "browserify": "browserify ./src/index.js -s aframe-core",
+    "browserify": "browserify ./src/index.js -s aframe-core -p browserify-derequire",
     "build": "mkdirp build/ && npm run browserify -- --debug -o build/aframe-core.js",
     "dist": "rimraf dist/ && mkdirp dist/ && npm run dist:js",
     "dist:js": "npm run browserify -s -- --debug | exorcist dist/aframe-core.js.map > dist/aframe-core.js && uglifyjs dist/aframe-core.js -c warnings=false -m -o dist/aframe-core.min.js",
@@ -53148,16 +53572,16 @@ module.exports={
   }
 }
 
-},{}],27:[function(require,module,exports){
-var registerComponent = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
+},{}],28:[function(_dereq_,module,exports){
+var registerComponent = _dereq_('../core/component').registerComponent;
+var THREE = _dereq_('../../lib/three');
 
 module.exports.Component = registerComponent('camera', {
   schema: {
+    active: { default: true },
     far: { default: 10000 },
     fov: { default: 80, min: 0 },
-    near: { default: 0.5, min: 0 },
-    active: { default: false }
+    near: { default: 0.5, min: 0 }
   },
 
   /**
@@ -53167,14 +53591,20 @@ module.exports.Component = registerComponent('camera', {
   init: function () {
     var camera = this.camera = new THREE.PerspectiveCamera();
     var el = this.el;
-    camera.el = el;
-    el.object3D.add(camera);
+    el.setObject3D('camera', camera);
+  },
+
+  /**
+   * Remove camera on remove (callback).
+   */
+  remove: function () {
+    this.el.setObject3D('camera');
   },
 
   /**
    * Updates three.js camera.
    */
-  update: function () {
+  update: function (oldData) {
     var el = this.el;
     var sceneEl = el.sceneEl;
     var data = this.data;
@@ -53183,14 +53613,22 @@ module.exports.Component = registerComponent('camera', {
     camera.far = data.far;
     camera.fov = data.fov;
     camera.near = data.near;
-    if (data.active) { sceneEl.setActiveCamera(camera); }
     camera.updateProjectionMatrix();
+    // If the active property has changes or on first update call
+    if (!oldData || oldData.active !== data.active) {
+      if (data.active) {
+        sceneEl.setActiveCamera(camera);
+      } else if (sceneEl.camera === camera) {
+        // If the camera is disabled and is the current active one
+        sceneEl.setActiveCamera();
+      }
+    }
   }
 });
 
-},{"../../lib/three":1,"../core/component":53}],28:[function(require,module,exports){
-var registerComponent = require('../core/component').registerComponent;
-var utils = require('../utils/');
+},{"../../lib/three":1,"../core/component":54}],29:[function(_dereq_,module,exports){
+var registerComponent = _dereq_('../core/component').registerComponent;
+var utils = _dereq_('../utils/');
 
 module.exports.Component = registerComponent('cursor', {
   schema: {
@@ -53278,10 +53716,10 @@ module.exports.Component = registerComponent('cursor', {
   }
 });
 
-},{"../core/component":53,"../utils/":58}],29:[function(require,module,exports){
-var register = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
-var debug = require('../utils/debug');
+},{"../core/component":54,"../utils/":60}],30:[function(_dereq_,module,exports){
+var register = _dereq_('../core/component').registerComponent;
+var THREE = _dereq_('../../lib/three');
+var debug = _dereq_('../utils/debug');
 
 var warn = debug('components:fog:warn');
 
@@ -53353,15 +53791,15 @@ function getFog (data) {
   return fog;
 }
 
-},{"../../lib/three":1,"../core/component":53,"../utils/debug":57}],30:[function(require,module,exports){
-var debug = require('../utils/debug');
-var registerComponent = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
-var utils = require('../utils');
+},{"../../lib/three":1,"../core/component":54,"../utils/debug":59}],31:[function(_dereq_,module,exports){
+var debug = _dereq_('../utils/debug');
+var registerComponent = _dereq_('../core/component').registerComponent;
+var THREE = _dereq_('../../lib/three');
+var utils = _dereq_('../utils');
 
 var DEFAULT_RADIUS = 1;
 var helperMatrix = new THREE.Matrix4();
-var rad = THREE.Math.degToRad;
+var degToRad = THREE.Math.degToRad;
 var warn = debug('components:geometry:warn');
 
 /**
@@ -53405,13 +53843,12 @@ module.exports.Component = registerComponent('geometry', {
     depth: { default: 2, min: 0, if: { primitive: ['box'] } },
     height: { default: 2, min: 0, if: { primitive: ['box', 'plane'] } },
     openEnded: { default: false, if: { primitive: ['cylinder'] } },
-    p: { default: 2, if: { primitive: ['torusKnot'] } },
-    translate: { default: { x: 0, y: 0, z: 0 } },
+    p: { default: 2, if: { primitive: ['torusKnot'] }, type: 'int' },
     primitive: {
       default: '',
       oneOf: ['', 'box', 'circle', 'cylinder', 'plane',
               'ring', 'sphere', 'torus', 'torusKnot'] },
-    q: { default: 3, if: { primitive: ['torusKnot'] } },
+    q: { default: 3, if: { primitive: ['torusKnot'] }, type: 'int' },
     phiLength: { default: 360, if: { primitive: ['sphere'] } },
     phiStart: { default: 0, min: 0, if: { primitive: ['sphere'] } },
     radius: { default: DEFAULT_RADIUS, min: 0, if: { primitive: ['circle', 'cylinder', 'sphere', 'torus', 'torusKnot'] } },
@@ -53421,16 +53858,17 @@ module.exports.Component = registerComponent('geometry', {
     radiusTop: { default: DEFAULT_RADIUS, if: { primitive: ['cylinder'] } },
     radiusTubular: { default: 0.2, min: 0, if: { primitive: ['torus'] } },
     scaleHeight: { default: 1, min: 0, if: { primitive: ['torusKnot'] } },
-    segments: { default: 8, min: 0, if: { primitive: ['circle'] } },
-    segmentsHeight: { default: 18, min: 0, if: { primitive: ['cylinder', 'sphere'] } },
-    segmentsPhi: { default: 8, min: 0, if: { primitive: ['ring'] } },
-    segmentsRadial: { default: 36, min: 0, if: { primitive: ['cylinder'] } },
-    segmentsTheta: { default: 8, min: 0, if: { primitive: ['ring'] } },
-    segmentsTubular: { default: 8, min: 0, if: { primitive: ['torus', 'torusKnot'] } },
-    segmentsWidth: { default: 36, min: 0, if: { primitive: ['sphere'] } },
+    segments: { default: 8, min: 0, if: { primitive: ['circle'] }, type: 'int' },
+    segmentsHeight: { default: 18, min: 0, if: { primitive: ['cylinder', 'sphere'] }, type: 'int' },
+    segmentsPhi: { default: 8, min: 0, if: { primitive: ['ring'] }, type: 'int' },
+    segmentsRadial: { default: 36, min: 0, if: { primitive: ['cylinder'] }, type: 'int' },
+    segmentsTheta: { default: 8, min: 0, if: { primitive: ['ring'] }, type: 'int' },
+    segmentsTubular: { default: 8, min: 0, if: { primitive: ['torus', 'torusKnot'] }, type: 'int' },
+    segmentsWidth: { default: 36, min: 0, if: { primitive: ['sphere'] }, type: 'int' },
     thetaLength: { default: 360, min: 0, if: { primitive: ['circle', 'cylinder', 'ring',
                                                            'sphere'] } },
     thetaStart: { default: 0, if: { primitive: ['circle', 'cylinder', 'ring', 'sphere'] } },
+    translate: { type: 'vec3' },
     width: { default: 2, min: 0, if: { primitive: ['box', 'plane'] } }
   },
 
@@ -53443,12 +53881,13 @@ module.exports.Component = registerComponent('geometry', {
     var data = this.data;
     var currentTranslate = previousData.translate || this.schema.translate.default;
     var diff = utils.diff(previousData, data);
-    var geometry = this.el.object3D.geometry;
+    var mesh = this.el.getOrCreateObject3D('mesh', THREE.Mesh);
+    var geometry = mesh.geometry;
     var geometryNeedsUpdate = !(Object.keys(diff).length === 1 && 'translate' in diff);
     var translateNeedsUpdate = !utils.deepEqual(data.translate, currentTranslate);
 
     if (geometryNeedsUpdate) {
-      geometry = this.el.object3D.geometry = getGeometry(this.data, this.schema);
+      geometry = mesh.geometry = getGeometry(this.data, this.schema);
     }
     if (translateNeedsUpdate) {
       applyTranslate(geometry, data.translate, currentTranslate);
@@ -53459,7 +53898,7 @@ module.exports.Component = registerComponent('geometry', {
    * Removes geometry on remove (callback).
    */
   remove: function () {
-    this.el.object3D.geometry = new THREE.Geometry();
+    this.el.getObject3D('mesh').geometry = new THREE.Geometry();
   }
 });
 
@@ -53481,19 +53920,19 @@ function getGeometry (data, schema) {
     }
     case 'circle': {
       return new THREE.CircleGeometry(
-        data.radius, data.segments, rad(data.thetaStart), rad(data.thetaLength));
+        data.radius, data.segments, degToRad(data.thetaStart), degToRad(data.thetaLength));
     }
     case 'cone': {
       return new THREE.CylinderGeometry(
         data.radiusTop, data.radiusBottom, data.height,
         data.segmentsRadial, data.segmentsHeight,
-        data.openEnded, rad(data.thetaStart), rad(data.thetaLength));
+        data.openEnded, degToRad(data.thetaStart), degToRad(data.thetaLength));
     }
     case 'cylinder': {
       return new THREE.CylinderGeometry(
         data.radius, data.radius, data.height,
         data.segmentsRadial, data.segmentsHeight,
-        data.openEnded, rad(data.thetaStart), rad(data.thetaLength));
+        data.openEnded, degToRad(data.thetaStart), degToRad(data.thetaLength));
     }
     case 'plane': {
       return new THREE.PlaneBufferGeometry(data.width, data.height);
@@ -53501,20 +53940,20 @@ function getGeometry (data, schema) {
     case 'ring': {
       return new THREE.RingGeometry(
         data.radiusInner, data.radiusOuter, data.segmentsTheta, data.segmentsPhi,
-        rad(data.thetaStart), rad(data.thetaLength));
+        degToRad(data.thetaStart), degToRad(data.thetaLength));
     }
     case 'sphere': {
       // thetaLength's default for spheres is different from those of the other geometries.
       // For now, we detect if thetaLength is exactly 360 to switch to a different default.
       if (data.thetaLength === 360) { data.thetaLength = 180; }
       return new THREE.SphereBufferGeometry(
-        data.radius, data.segmentsWidth, data.segmentsHeight, rad(data.phiStart),
-        rad(data.phiLength), rad(data.thetaStart), rad(data.thetaLength));
+        data.radius, data.segmentsWidth, data.segmentsHeight, degToRad(data.phiStart),
+        degToRad(data.phiLength), degToRad(data.thetaStart), degToRad(data.thetaLength));
     }
     case 'torus': {
       return new THREE.TorusGeometry(
         data.radius, data.radiusTubular * 2, data.segmentsRadial, data.segmentsTubular,
-        rad(data.arc));
+        degToRad(data.arc));
     }
     case 'torusKnot': {
       return new THREE.TorusKnotGeometry(
@@ -53545,31 +53984,31 @@ function applyTranslate (geometry, translate, currentTranslate) {
   geometry.verticesNeedsUpdate = true;
 }
 
-},{"../../lib/three":1,"../core/component":53,"../utils":58,"../utils/debug":57}],31:[function(require,module,exports){
-require('../components/camera');
-require('../components/cursor');
-require('../components/fog');
-require('../components/geometry');
-require('../components/light');
-require('../components/loader');
-require('../components/look-at');
-require('../components/look-controls');
-require('../components/material');
-require('../components/position');
-require('../components/raycaster');
-require('../components/rotation');
-require('../components/scale');
-require('../components/sound');
-require('../components/visible');
-require('../components/wasd-controls');
+},{"../../lib/three":1,"../core/component":54,"../utils":60,"../utils/debug":59}],32:[function(_dereq_,module,exports){
+_dereq_('../components/camera');
+_dereq_('../components/cursor');
+_dereq_('../components/fog');
+_dereq_('../components/geometry');
+_dereq_('../components/light');
+_dereq_('../components/loader');
+_dereq_('../components/look-at');
+_dereq_('../components/look-controls');
+_dereq_('../components/material');
+_dereq_('../components/position');
+_dereq_('../components/raycaster');
+_dereq_('../components/rotation');
+_dereq_('../components/scale');
+_dereq_('../components/sound');
+_dereq_('../components/visible');
+_dereq_('../components/wasd-controls');
 
-},{"../components/camera":27,"../components/cursor":28,"../components/fog":29,"../components/geometry":30,"../components/light":32,"../components/loader":33,"../components/look-at":34,"../components/look-controls":35,"../components/material":36,"../components/position":37,"../components/raycaster":38,"../components/rotation":39,"../components/scale":40,"../components/sound":41,"../components/visible":42,"../components/wasd-controls":43}],32:[function(require,module,exports){
-var diff = require('../utils').diff;
-var debug = require('../utils/debug');
-var registerComponent = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
+},{"../components/camera":28,"../components/cursor":29,"../components/fog":30,"../components/geometry":31,"../components/light":33,"../components/loader":34,"../components/look-at":35,"../components/look-controls":36,"../components/material":37,"../components/position":38,"../components/raycaster":39,"../components/rotation":40,"../components/scale":41,"../components/sound":42,"../components/visible":43,"../components/wasd-controls":44}],33:[function(_dereq_,module,exports){
+var diff = _dereq_('../utils').diff;
+var debug = _dereq_('../utils/debug');
+var registerComponent = _dereq_('../core/component').registerComponent;
+var THREE = _dereq_('../../lib/three');
 
-var rad = THREE.Math.degToRad;
+var degToRad = THREE.Math.degToRad;
 var warn = debug('components:light:warn');
 
 /**
@@ -53644,12 +54083,12 @@ module.exports.Component = registerComponent('light', {
     var newLight = getLight(data);
     if (newLight) {
       if (this.light) {
-        el.object3D.remove(this.light);
+        el.setObject3D('light');
       }
 
       this.light = newLight;
       this.light.el = el;
-      el.object3D.add(this.light);
+      el.setObject3D('light', this.light);
     }
   },
 
@@ -53657,7 +54096,7 @@ module.exports.Component = registerComponent('light', {
    * Remove light on remove (callback).
    */
   remove: function () {
-    if (this.light) { this.el.object3D.remove(this.light); }
+    this.el.setObject3D('light');
   }
 });
 
@@ -53689,7 +54128,7 @@ function getLight (data) {
       return new THREE.PointLight(color, intensity, distance, decay);
     }
     case 'spot': {
-      return new THREE.SpotLight(color, intensity, distance, rad(angle), data.exponent,
+      return new THREE.SpotLight(color, intensity, distance, degToRad(angle), data.exponent,
                                  decay);
     }
     default: {
@@ -53699,11 +54138,11 @@ function getLight (data) {
   }
 }
 
-},{"../../lib/three":1,"../core/component":53,"../utils":58,"../utils/debug":57}],33:[function(require,module,exports){
-var debug = require('../utils/debug');
-var registerComponent = require('../core/component').registerComponent;
-var parseUrl = require('../utils/src-loader').parseUrl;
-var THREE = require('../../lib/three');
+},{"../../lib/three":1,"../core/component":54,"../utils":60,"../utils/debug":59}],34:[function(_dereq_,module,exports){
+var debug = _dereq_('../utils/debug');
+var registerComponent = _dereq_('../core/component').registerComponent;
+var parseUrl = _dereq_('../utils/src-loader').parseUrl;
+var THREE = _dereq_('../../lib/three');
 
 var warn = debug('components:loader:warn');
 
@@ -53712,6 +54151,7 @@ module.exports.Component = registerComponent('loader', {
 
   schema: {
     src: { default: '' },
+    mtl: { default: '' },
     format: {
       default: 'obj',
       oneOf: ['obj', 'collada']
@@ -53723,15 +54163,16 @@ module.exports.Component = registerComponent('loader', {
     var data = this.data;
     var model = this.model;
     var url = parseUrl(data.src);
+    var mtlUrl = parseUrl(data.mtl);
     var format = data.format;
-    if (model) { el.object3D.remove(model); }
+    if (model) { el.setObject3D('mesh'); }
     if (!url) {
       warn('Model URL not provided');
       return;
     }
     switch (format) {
       case 'obj':
-        this.loadObj(url);
+        this.loadObj(url, mtlUrl);
         break;
       case 'collada':
         this.loadCollada(url);
@@ -53741,15 +54182,33 @@ module.exports.Component = registerComponent('loader', {
     }
   },
 
-  loadObj: function (url) {
+  loadObj: function (objUrl, mtlUrl) {
     var self = this;
     var el = this.el;
-    var loader = new THREE.OBJLoader();
-    loader.load(url, function (object) {
-      self.model = object;
-      self.applyMaterial();
-      el.object3D.add(object);
-    });
+    var objLoader = new THREE.OBJLoader();
+    if (mtlUrl) {
+      // .OBJ + .MTL assets.
+      if (el.components.material) {
+        warn('Material component is ignored when a .MTL is provided');
+      }
+      var mtlLoader = new THREE.MTLLoader(objLoader.manager);
+      mtlLoader.setBaseUrl(mtlUrl.substr(0, mtlUrl.lastIndexOf('/') + 1));
+      mtlLoader.load(mtlUrl, function (materials) {
+        materials.preload();
+        objLoader.setMaterials(materials);
+        objLoader.load(objUrl, function (object) {
+          self.model = object;
+          el.setObject3D('mesh', object);
+        });
+      });
+    } else {
+      // .OBJ asset only.
+      objLoader.load(objUrl, function (object) {
+        self.model = object;
+        self.applyMaterial();
+        el.setObject3D('mesh', object);
+      });
+    }
   },
 
   applyMaterial: function () {
@@ -53769,16 +54228,16 @@ module.exports.Component = registerComponent('loader', {
     loader.options.convertUpAxis = true;
     loader.load(url, function (collada) {
       self.model = collada.scene;
-      el.object3D.add(collada.scene);
+      el.setObject3D('mesh', collada.scene);
     });
   }
 });
 
-},{"../../lib/three":1,"../core/component":53,"../utils/debug":57,"../utils/src-loader":59}],34:[function(require,module,exports){
-var debug = require('../utils/debug');
-var coordinates = require('../utils/coordinates');
-var registerComponent = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
+},{"../../lib/three":1,"../core/component":54,"../utils/debug":59,"../utils/src-loader":61}],35:[function(_dereq_,module,exports){
+var debug = _dereq_('../utils/debug');
+var coordinates = _dereq_('../utils/coordinates');
+var registerComponent = _dereq_('../core/component').registerComponent;
+var THREE = _dereq_('../../lib/three');
 
 var warn = debug('components:look-at:warn');
 var isCoordinate = coordinates.isCoordinate;
@@ -53803,6 +54262,8 @@ var isCoordinate = coordinates.isCoordinate;
  * @member {object} vector - Helper vector to do matrix transformations.
  */
 module.exports.Component = registerComponent('look-at', {
+  schema: { default: '' },
+
   init: function () {
     this.target3D = null;
     this.vector = new THREE.Vector3();
@@ -53814,12 +54275,10 @@ module.exports.Component = registerComponent('look-at', {
    */
   update: function () {
     var self = this;
-    var data = self.data;
-    var position = data.position;
+    var target = self.data;
     var object3D = self.el.object3D;
     var target3D = self.target3D;
     var targetEl;
-    var targetSelector = data.targetSelector;
 
     // Track target object position. Depends on parent object keeping global transforms up
     // to state with updateMatrixWorld(). In practice, this is handled by the renderer.
@@ -53827,78 +54286,63 @@ module.exports.Component = registerComponent('look-at', {
       return object3D.lookAt(self.vector.setFromMatrixPosition(target3D.matrixWorld));
     }
 
-    // Query for the element, grab its object3D, then register a behavior on the scene to
-    // track the target on every tick.
-    if (targetSelector) {
-      targetEl = document.querySelector(targetSelector);
-      if (!targetEl) {
-        warn('"' + targetSelector + '" does not point to a valid entity to look-at');
-        return;
-      }
-      if (!targetEl.hasLoaded) {
-        return targetEl.addEventListener('loaded', function () {
-          self.beginTracking(targetEl);
-        });
-      }
-      return self.beginTracking(targetEl);
+    // No longer looking at anything (i.e., look-at="").
+    if (!target ||
+        (typeof target === 'object' && !Object.keys(target).length)) {
+      return self.remove();
     }
 
     // Look at a position.
-    if (position) {
-      object3D.lookAt(new THREE.Vector3(position.x, position.y, position.z));
-      return;
+    if (typeof target === 'object') {
+      return object3D.lookAt(new THREE.Vector3(target.x, target.y, target.z));
     }
 
-    // No longer looking at anything (i.e., look-at="").
-    if (!position && !targetSelector) { return self.remove(); }
+    // Assume target is a string.
+    // Query for the element, grab its object3D, then register a behavior on the scene to
+    // track the target on every tick.
+    targetEl = self.el.sceneEl.querySelector(target);
+    if (!targetEl) {
+      warn('"' + target + '" does not point to a valid entity to look-at');
+      return;
+    }
+    if (!targetEl.hasLoaded) {
+      return targetEl.addEventListener('loaded', function () {
+        self.beginTracking(targetEl);
+      });
+    }
+    return self.beginTracking(targetEl);
   },
 
   /**
    * Remove follow behavior on remove (callback).
    */
   remove: function () {
-    this.el.sceneEl.removeBehavior(this);
+    if (this.target3D) {
+      this.el.sceneEl.removeBehavior(this);
+      this.target3D = null;
+    }
+  },
+
+  parse: function (value) {
+    if (isCoordinate(value) || typeof value === 'object') {
+      return coordinates.parse(value);
+    }
+    return value;
+  },
+
+  stringify: function (data) {
+    return coordinates.stringify(data);
   },
 
   beginTracking: function (targetEl) {
     this.target3D = targetEl.object3D;
     this.el.sceneEl.addBehavior(this);
-  },
-
-  /**
-   * Determine whether attribute value is a target selector or a position.
-   * Parse the attribute value if it is a position.
-   *
-   * @param {string} value - HTML attribute of component.
-   * @returns {object}
-   */
-  parse: function (value) {
-    if (!value) {
-      return {
-        position: null,
-        targetSelector: null
-      };
-    }
-    // Check if value is a position. Need to match digits since a target selector could have
-    // three values as well (e.g., look-at="#el .el .box").
-    if (isCoordinate(value)) {
-      return {
-        position: coordinates.parse(value),
-        targetSelector: null
-      };
-    }
-    return {
-      position: null,
-      targetSelector: value
-    };
-  },
-
-  stringify: coordinates.componentMixin.stringify
+  }
 });
 
-},{"../../lib/three":1,"../core/component":53,"../utils/coordinates":56,"../utils/debug":57}],35:[function(require,module,exports){
-var registerComponent = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
+},{"../../lib/three":1,"../core/component":54,"../utils/coordinates":58,"../utils/debug":59}],36:[function(_dereq_,module,exports){
+var registerComponent = _dereq_('../core/component').registerComponent;
+var THREE = _dereq_('../../lib/three');
 
 // To avoid recalculation at every mouse movement tick
 var PI_2 = Math.PI / 2;
@@ -53913,9 +54357,9 @@ module.exports.Component = registerComponent('look-controls', {
   init: function () {
     this.previousPosition = new THREE.Vector3();
     this.deltaPosition = new THREE.Vector3();
-    this.bindMethods();
     this.setupMouseControls();
     this.setupHMDControls();
+    this.bindMethods();
   },
 
   bindMethods: function () {
@@ -53927,21 +54371,21 @@ module.exports.Component = registerComponent('look-controls', {
     this.onTouchEnd = this.onTouchEnd.bind(this);
   },
 
-  start: function () {
+  play: function () {
     var scene = this.el.sceneEl;
     this.previousPosition.set(0, 0, 0);
-    this.attachEventListeners();
+    this.addEventListeners();
     scene.addBehavior(this);
   },
 
-  stop: function () {
+  pause: function () {
     var scene = this.el.sceneEl;
     this.removeEventListeners();
     scene.removeBehavior(this);
   },
 
   remove: function () {
-    this.stop();
+    this.pause();
   },
 
   setupMouseControls: function () {
@@ -53960,7 +54404,7 @@ module.exports.Component = registerComponent('look-controls', {
     this.zeroQuaternion = new THREE.Quaternion();
   },
 
-  attachEventListeners: function () {
+  addEventListeners: function () {
     var canvasEl = document.querySelector('a-scene').canvas;
 
     // Mouse Events
@@ -54136,13 +54580,13 @@ module.exports.Component = registerComponent('look-controls', {
   }
 });
 
-},{"../../lib/three":1,"../core/component":53}],36:[function(require,module,exports){
+},{"../../lib/three":1,"../core/component":54}],37:[function(_dereq_,module,exports){
 /* global Promise */
-var debug = require('../utils/debug');
-var diff = require('../utils').diff;
-var registerComponent = require('../core/component').registerComponent;
-var srcLoader = require('../utils/src-loader');
-var THREE = require('../../lib/three');
+var debug = _dereq_('../utils/debug');
+var diff = _dereq_('../utils').diff;
+var registerComponent = _dereq_('../core/component').registerComponent;
+var srcLoader = _dereq_('../utils/src-loader');
+var THREE = _dereq_('../../lib/three');
 
 var CubeLoader = new THREE.CubeTextureLoader();
 var error = debug('components:material:error');
@@ -54235,7 +54679,7 @@ module.exports.Component = registerComponent('material', {
     var el = this.el;
     var defaultColor = this.schema.color.default;
     var defaultMaterial = new THREE.MeshBasicMaterial({ color: defaultColor });
-    var object3D = el.object3D;
+    var object3D = el.getObject3D('mesh');
     if (object3D) { object3D.material = defaultMaterial; }
     el.sceneEl.unregisterMaterial(this.material);
   },
@@ -54250,11 +54694,12 @@ module.exports.Component = registerComponent('material', {
    */
   createMaterial: function (data, type) {
     var material;
+    var mesh = this.el.getOrCreateObject3D('mesh', THREE.Mesh);
     var sceneEl = this.el.sceneEl;
     if (this.material) {
       sceneEl.unregisterMaterial(this.material);
     }
-    material = this.material = this.el.object3D.material = new THREE[type](data);
+    material = this.material = mesh.material = new THREE[type](data);
     sceneEl.registerMaterial(material);
     return material;
   },
@@ -54513,29 +54958,23 @@ function getSide (side) {
   }
 }
 
-},{"../../lib/three":1,"../core/component":53,"../utils":58,"../utils/debug":57,"../utils/src-loader":59}],37:[function(require,module,exports){
-var coordinatesMixin = require('../utils/coordinates').componentMixin;
-var registerComponent = require('../core/component').registerComponent;
-var utils = require('../utils/');
+},{"../../lib/three":1,"../core/component":54,"../utils":60,"../utils/debug":59,"../utils/src-loader":61}],38:[function(_dereq_,module,exports){
+var registerComponent = _dereq_('../core/component').registerComponent;
 
-module.exports.Component = registerComponent('position', utils.extend({
-  schema: {
-    x: { default: 0 },
-    y: { default: 0 },
-    z: { default: 0 }
-  },
+module.exports.Component = registerComponent('position', {
+  schema: { type: 'vec3' },
 
   update: function () {
     var object3D = this.el.object3D;
     var data = this.data;
     object3D.position.set(data.x, data.y, data.z);
   }
-}, coordinatesMixin));
+});
 
-},{"../core/component":53,"../utils/":58,"../utils/coordinates":56}],38:[function(require,module,exports){
-var registerComponent = require('../core/component').registerComponent;
-var requestInterval = require('request-interval');
-var THREE = require('../../lib/three');
+},{"../core/component":54}],39:[function(_dereq_,module,exports){
+var registerComponent = _dereq_('../core/component').registerComponent;
+var requestInterval = _dereq_('request-interval');
+var THREE = _dereq_('../../lib/three');
 
 module.exports.Component = registerComponent('raycaster', {
   init: function () {
@@ -54543,18 +54982,18 @@ module.exports.Component = registerComponent('raycaster', {
     this.intersectedEl = null;
   },
 
-  start: function () {
+  play: function () {
     this.pollForHoverIntersections();
   },
 
-  stop: function () {
+  pause: function () {
     var pollInterval = this.pollInterval;
     if (!pollInterval) { return; }
     requestInterval.clear(this.pollInterval);
   },
 
   remove: function () {
-    this.stop();
+    this.pause();
   },
 
   pollForHoverIntersections: function () {
@@ -54640,18 +55079,12 @@ module.exports.Component = registerComponent('raycaster', {
   }
 });
 
-},{"../../lib/three":1,"../core/component":53,"request-interval":16}],39:[function(require,module,exports){
-var coordinatesMixin = require('../utils/coordinates').componentMixin;
-var registerComponent = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
-var utils = require('../utils/');
+},{"../../lib/three":1,"../core/component":54,"request-interval":16}],40:[function(_dereq_,module,exports){
+var degToRad = _dereq_('../../lib/three').Math.degToRad;
+var registerComponent = _dereq_('../core/component').registerComponent;
 
-module.exports.Component = registerComponent('rotation', utils.extend({
-  schema: {
-    x: { default: 0 },
-    y: { default: 0 },
-    z: { default: 0 }
-  },
+module.exports.Component = registerComponent('rotation', {
+  schema: { type: 'vec3' },
 
   /**
    * Updates object3D rotation.
@@ -54659,26 +55092,21 @@ module.exports.Component = registerComponent('rotation', utils.extend({
   update: function () {
     var data = this.data;
     var object3D = this.el.object3D;
-    object3D.rotation.set(THREE.Math.degToRad(data.x),
-                          THREE.Math.degToRad(data.y),
-                          THREE.Math.degToRad(data.z));
+    object3D.rotation.set(degToRad(data.x), degToRad(data.y), degToRad(data.z));
     object3D.rotation.order = 'YXZ';
   }
-}, coordinatesMixin));
+});
 
-},{"../../lib/three":1,"../core/component":53,"../utils/":58,"../utils/coordinates":56}],40:[function(require,module,exports){
-var coordinatesMixin = require('../utils/coordinates').componentMixin;
-var registerComponent = require('../core/component').registerComponent;
-var utils = require('../utils/');
+},{"../../lib/three":1,"../core/component":54}],41:[function(_dereq_,module,exports){
+var registerComponent = _dereq_('../core/component').registerComponent;
 
 // Avoids triggering a zero-determinant which makes object3D matrix non-invertible.
 var zeroScale = 0.00001;
 
-module.exports.Component = registerComponent('scale', utils.extend({
+module.exports.Component = registerComponent('scale', {
   schema: {
-    x: { default: 1 },
-    y: { default: 1 },
-    z: { default: 1 }
+    type: 'vec3',
+    default: { x: 1, y: 1, z: 1 }
   },
 
   update: function () {
@@ -54689,13 +55117,13 @@ module.exports.Component = registerComponent('scale', utils.extend({
     var z = data.z === 0 ? zeroScale : data.z;
     object3D.scale.set(x, y, z);
   }
-}, coordinatesMixin));
+});
 
-},{"../core/component":53,"../utils/":58,"../utils/coordinates":56}],41:[function(require,module,exports){
-var debug = require('../utils/debug');
-var diff = require('../utils').diff;
-var registerComponent = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
+},{"../core/component":54}],42:[function(_dereq_,module,exports){
+var debug = _dereq_('../utils/debug');
+var diff = _dereq_('../utils').diff;
+var registerComponent = _dereq_('../core/component').registerComponent;
+var THREE = _dereq_('../../lib/three');
 
 var warn = debug('components:sound:warn');
 
@@ -54764,7 +55192,7 @@ module.exports.Component = registerComponent('sound', {
   },
 
   remove: function () {
-    this.el.object3D.remove(this.sound);
+    this.el.setObject3D('sound');
   },
 
   /**
@@ -54779,12 +55207,12 @@ module.exports.Component = registerComponent('sound', {
 
     if (sound) {
       this.stop();
-      el.object3D.remove(sound);
+      el.setObject3D('sound');
     }
 
     listener = this.listener = new THREE.AudioListener();
     sound = this.sound = new THREE.Audio(listener);
-    el.object3D.add(sound);
+    el.setObject3D('sound', sound);
     return sound;
   },
 
@@ -54801,33 +55229,26 @@ module.exports.Component = registerComponent('sound', {
   }
 });
 
-},{"../../lib/three":1,"../core/component":53,"../utils":58,"../utils/debug":57}],42:[function(require,module,exports){
-var registerComponent = require('../core/component').registerComponent;
+},{"../../lib/three":1,"../core/component":54,"../utils":60,"../utils/debug":59}],43:[function(_dereq_,module,exports){
+var registerComponent = _dereq_('../core/component').registerComponent;
 
 /**
  * Visibility component.
- *
- * @param {bool}
  */
 module.exports.Component = registerComponent('visible', {
-  schema: { default: true },
+  schema: {
+    type: 'boolean',
+    default: true
+  },
 
   update: function () {
     this.el.object3D.visible = this.data;
-  },
-
-  parse: function (value) {
-    return value !== 'false';
-  },
-
-  stringify: function (value) {
-    return value.toString();
   }
 });
 
-},{"../core/component":53}],43:[function(require,module,exports){
-var registerComponent = require('../core/component').registerComponent;
-var THREE = require('../../lib/three');
+},{"../core/component":54}],44:[function(_dereq_,module,exports){
+var registerComponent = _dereq_('../core/component').registerComponent;
+var THREE = _dereq_('../../lib/three');
 
 var MAX_DELTA = 0.2;
 
@@ -54872,20 +55293,20 @@ module.exports.Component = registerComponent('wasd-controls', {
     this.onKeyUp = this.onKeyUp.bind(this);
   },
 
-  start: function () {
+  play: function () {
     var scene = this.el.sceneEl;
     this.attachEventListeners();
     scene.addBehavior(this);
   },
 
-  stop: function () {
+  pause: function () {
     var scene = this.el.sceneEl;
     this.removeEventListeners();
     scene.removeBehavior(this);
   },
 
   remove: function () {
-    this.stop();
+    this.pause();
   },
 
   update: function (previousData) {
@@ -54979,12 +55400,12 @@ module.exports.Component = registerComponent('wasd-controls', {
   })()
 });
 
-},{"../../lib/three":1,"../core/component":53}],44:[function(require,module,exports){
+},{"../../lib/three":1,"../core/component":54}],45:[function(_dereq_,module,exports){
 /**
  * Animation configuration options for TWEEN.js animations.
  * Used by `<a-animation>`.
  */
-var TWEEN = require('tween.js');
+var TWEEN = _dereq_('tween.js');
 
 var DIRECTIONS = {
   alternate: 'alternate',
@@ -55081,14 +55502,14 @@ module.exports.easingFunctions = EASING_FUNCTIONS;
 module.exports.fills = FILLS;
 module.exports.repeats = REPEATS;
 
-},{"tween.js":24}],45:[function(require,module,exports){
-var ANode = require('./a-node');
-var coerce = require('../utils/').coerce;
-var constants = require('../constants/animation');
-var coordinates = require('../utils/').coordinates;
-var registerElement = require('./a-register-element').registerElement;
-var TWEEN = require('tween.js');
-var utils = require('../utils/');
+},{"tween.js":25}],46:[function(_dereq_,module,exports){
+var ANode = _dereq_('./a-node');
+var constants = _dereq_('../constants/animation');
+var coordinates = _dereq_('../utils/').coordinates;
+var parseProperty = _dereq_('./schema').parseProperty;
+var registerElement = _dereq_('./a-register-element').registerElement;
+var TWEEN = _dereq_('tween.js');
+var utils = _dereq_('../utils/');
 
 var DEFAULTS = constants.defaults;
 var DIRECTIONS = constants.directions;
@@ -55144,6 +55565,7 @@ module.exports.AAnimation = registerElement('a-animation', {
   prototype: Object.create(ANode.prototype, {
     createdCallback: {
       value: function () {
+        this.bindMethods();
         this.isRunning = false;
         this.partialSetAttribute = function () { /* no-op */ };
         this.tween = null;
@@ -55167,7 +55589,6 @@ module.exports.AAnimation = registerElement('a-animation', {
         }
 
         function init () {
-          self.bindMethods();
           self.applyMixin();
           self.update();
           self.load();
@@ -55305,8 +55726,7 @@ module.exports.AAnimation = registerElement('a-animation', {
 
     start: {
       value: function () {
-        var sceneEl = this.el.sceneEl;
-        if (this.isRunning || sceneEl.paused) { return; }
+        if (this.isRunning || this.el.paused) { return; }
         this.tween = this.getTween();
         this.isRunning = true;
         this.tween.start();
@@ -55322,6 +55742,7 @@ module.exports.AAnimation = registerElement('a-animation', {
         tween.stop();
         this.isRunning = false;
         this.partialSetAttribute(this.initialValue);
+        this.emit('animationstop');
       },
       writable: true
     },
@@ -55365,10 +55786,12 @@ module.exports.AAnimation = registerElement('a-animation', {
     addEventListeners: {
       value: function (evts) {
         var el = this.el;
-        var start = this.start.bind(this);
+        var self = this;
         utils.splitString(evts).forEach(function (evt) {
-          el.addEventListener(evt, start);
+          el.addEventListener(evt, self.start);
         });
+        el.addEventListener('play', this.start);
+        el.addEventListener('pause', this.stop);
         el.addEventListener('stateadded', this.onStateAdded);
         el.addEventListener('stateremoved', this.onStateRemoved);
       }
@@ -55449,7 +55872,7 @@ function cloneValue (val) {
  */
 function getAnimationValues (el, attribute, dataFrom, dataTo, currentValue) {
   var attributeSplit = attribute.split('.');
-  var coerceSchema;
+  var schema;
   var component;
   var componentPropName;
   var componentName;
@@ -55483,14 +55906,14 @@ function getAnimationValues (el, attribute, dataFrom, dataTo, currentValue) {
       el.setAttribute(componentName, '');
       component = el.components[componentName];
     }
-    coerceSchema = component.schema;
+    schema = component.schema;
     if (dataFrom === undefined) {  // dataFrom can be 0.
       from[attribute] = el.getComputedAttribute(componentName)[componentPropName];
     } else {
       from[attribute] = dataFrom;
     }
-    from[attribute] = coerce(from[attribute], coerceSchema, componentPropName);
-    to[attribute] = coerce(dataTo, coerceSchema, componentPropName);
+    from[attribute] = parseProperty(from[attribute], schema[componentPropName]);
+    to[attribute] = parseProperty(dataTo, schema[componentPropName]);
     partialSetAttribute = function (value) {
       el.setAttribute(componentName, componentPropName, value[attribute]);
     };
@@ -55563,9 +55986,9 @@ function boolToNum (bool) {
   return bool ? 1 : 0;
 }
 
-},{"../constants/animation":44,"../utils/":58,"./a-node":50,"./a-register-element":51,"tween.js":24}],46:[function(require,module,exports){
-var ANode = require('./a-node');
-var registerElement = require('./a-register-element').registerElement;
+},{"../constants/animation":45,"../utils/":60,"./a-node":51,"./a-register-element":52,"./schema":56,"tween.js":25}],47:[function(_dereq_,module,exports){
+var ANode = _dereq_('./a-node');
+var registerElement = _dereq_('./a-register-element').registerElement;
 
 /**
  * TODO: Block on assets before loading.
@@ -55580,10 +56003,10 @@ module.exports = registerElement('a-assets', {
   })
 });
 
-},{"./a-node":50,"./a-register-element":51}],47:[function(require,module,exports){
+},{"./a-node":51,"./a-register-element":52}],48:[function(_dereq_,module,exports){
 /* global HTMLElement */
-var debug = require('../utils/debug');
-var registerElement = require('./a-register-element').registerElement;
+var debug = _dereq_('../utils/debug');
+var registerElement = _dereq_('./a-register-element').registerElement;
 
 var warn = debug('core:cubemap:warn');
 
@@ -55631,14 +56054,13 @@ module.exports = registerElement('a-cubemap', {
   })
 });
 
-},{"../utils/debug":57,"./a-register-element":51}],48:[function(require,module,exports){
+},{"../utils/debug":59,"./a-register-element":52}],49:[function(_dereq_,module,exports){
 /* global HTMLElement */
-var ANode = require('./a-node');
-var AAnimation = require('./a-animation').AAnimation;
-var components = require('./component').components;
-var debug = require('../utils/debug');
-var re = require('./a-register-element');
-var THREE = require('../../lib/three');
+var ANode = _dereq_('./a-node');
+var components = _dereq_('./component').components;
+var debug = _dereq_('../utils/debug');
+var re = _dereq_('./a-register-element');
+var THREE = _dereq_('../../lib/three');
 
 var isNode = re.isNode;
 var log = debug('core:a-entity');
@@ -55661,6 +56083,7 @@ var AEntity;
  * @member {object} components - entity's currently initialized components.
  * @member {object} object3D - three.js object.
  * @member {array} states
+ * @member {boolean} paused - true if dynamic behavior of the entity is paused
  */
 var proto = Object.create(ANode.prototype, {
   defaults: {
@@ -55677,8 +56100,10 @@ var proto = Object.create(ANode.prototype, {
       this.isEntity = true;
       this.states = [];
       this.components = {};
-      this.stopped = true;
-      this.object3D = new THREE.Mesh();
+      this.paused = true;
+      this.object3D = new THREE.Group();
+      this.object3D.el = this;
+      this.objects3D = {};
     }
   },
 
@@ -55761,6 +56186,40 @@ var proto = Object.create(ANode.prototype, {
     }
   },
 
+  getObject3D: {
+    value: function (type, Constructor) {
+      var object3D = this.objects3D[type];
+      if (!object3D && Constructor) {
+        object3D = this.objects3D[type] = new Constructor();
+      }
+      this.setObject3D(type, object3D);
+      return object3D;
+    }
+  },
+
+  setObject3D: {
+    value: function (type, obj) {
+      var oldObj = this.objects3D[type];
+      if (oldObj) { this.object3D.remove(oldObj); }
+      if (obj instanceof THREE.Object3D) {
+        this.objects3D[type] = obj;
+        obj.el = this;
+        this.object3D.add(obj);
+      }
+    }
+  },
+
+  getOrCreateObject3D: {
+    value: function(type, Constructor) {
+      var object3D = this.getObject3D(type);
+      if (!object3D && Constructor) {
+        object3D = this.objects3D[type] = new Constructor();
+        this.setObject3D(type, object3D);
+      }
+      return object3D;
+    }
+  },
+
   add: {
     value: function (el) {
       if (!el.object3D) {
@@ -55797,7 +56256,6 @@ var proto = Object.create(ANode.prototype, {
   load: {
     value: function () {
       if (this.hasLoaded) { return; }
-      this.object3D.el = this;
 
       // Attach to parent object3D.
       this.addToParent();
@@ -55834,25 +56292,6 @@ var proto = Object.create(ANode.prototype, {
       }
 
       return childEntities;
-    }
-  },
-
-   /**
-   * @returns {array} Return entity animations.
-   */
-  getAnimations: {
-    value: function () {
-      var children = this.children;
-      var animations = [];
-
-      for (var i = 0; i < children.length; i++) {
-        var child = children[i];
-        if (child instanceof AAnimation) {
-          animations.push(child);
-        }
-      }
-
-      return animations;
     }
   },
 
@@ -55903,7 +56342,7 @@ var proto = Object.create(ANode.prototype, {
         this.setAttribute(name, '');
       } else {
         this.components[name] = new components[name].Component(this);
-        if (!this.stopped) { this.components[name].start(); }
+        if (!this.paused) { this.components[name].play(); }
       }
       log('Component initialized: %s', name);
     }
@@ -55975,9 +56414,6 @@ var proto = Object.create(ANode.prototype, {
           delete this.components[name];
           return;
         }
-        if (typeof newData === 'string') {
-          newData = component.parse(newData);
-        }
         // Component already initialized. Update component.
         component.updateProperties(newData);
         return;
@@ -56015,19 +56451,19 @@ var proto = Object.create(ANode.prototype, {
    * Starts any dynamic behavior associated to the entity
    * this involves dynamic components and animations
    */
-  start: {
+  play: {
     value: function () {
       var components = this.components;
       var componentKeys = Object.keys(components);
-      if (!this.stopped) { return; }
-      this.stopped = false;
-      componentKeys.forEach(startComponent);
-      this.getAnimations().forEach(start);
-      this.getChildEntities().forEach(start);
-      function start (obj) { obj.start(); }
-      function startComponent (key) {
-        components[key].start();
+      if (!this.paused) { return; }
+      this.paused = false;
+      componentKeys.forEach(playComponent);
+      this.getChildEntities().forEach(play);
+      function play (obj) { obj.play(); }
+      function playComponent (key) {
+        components[key].play();
       }
+      this.emit('play');
     },
     writable: true
   },
@@ -56036,18 +56472,19 @@ var proto = Object.create(ANode.prototype, {
    * Stops any dynamic behavior associated to the entity
    * This involves dynamic components and animations
    */
-  stop: {
+  pause: {
     value: function () {
       var components = this.components;
       var componentKeys = Object.keys(components);
-      if (this.stopped) { return; }
-      this.stopped = true;
-      componentKeys.forEach(stopComponent);
-      this.getAnimations().forEach(stop);
-      this.getChildEntities().forEach(stop);
-      function stop (obj) { obj.stop(); }
-      function stopComponent (key) { components[key].stop(); }
-    }
+      if (this.paused) { return; }
+      this.paused = true;
+      componentKeys.forEach(pauseComponent);
+      this.getChildEntities().forEach(pause);
+      function pause (obj) { obj.pause(); }
+      function pauseComponent (key) { components[key].pause(); }
+      this.emit('pause');
+    },
+    writable: true
   },
 
   /**
@@ -56099,6 +56536,7 @@ var proto = Object.create(ANode.prototype, {
       value = value === undefined ? '' : value;
       var valueStr = value;
       var oldValue;
+
       if (component) {
         if (typeof value === 'string' && componentPropValue !== undefined) {
           // Update currently-defined component data with the new property value.
@@ -56193,11 +56631,11 @@ AEntity = registerElement('a-entity', {
 });
 module.exports = AEntity;
 
-},{"../../lib/three":1,"../utils/debug":57,"./a-animation":45,"./a-node":50,"./a-register-element":51,"./component":53}],49:[function(require,module,exports){
+},{"../../lib/three":1,"../utils/debug":59,"./a-node":51,"./a-register-element":52,"./component":54}],50:[function(_dereq_,module,exports){
 /* global HTMLElement */
-var AComponents = require('./component').components;
-var ANode = require('./a-node');
-var registerElement = require('./a-register-element').registerElement;
+var AComponents = _dereq_('./component').components;
+var ANode = _dereq_('./a-node');
+var registerElement = _dereq_('./a-register-element').registerElement;
 
 module.exports = registerElement(
   'a-mixin',
@@ -56237,10 +56675,10 @@ module.exports = registerElement(
   }
 );
 
-},{"./a-node":50,"./a-register-element":51,"./component":53}],50:[function(require,module,exports){
+},{"./a-node":51,"./a-register-element":52,"./component":54}],51:[function(_dereq_,module,exports){
 /* global HTMLElement, MutationObserver */
-var registerElement = require('./a-register-element').registerElement;
-var utils = require('../utils/');
+var registerElement = _dereq_('./a-register-element').registerElement;
+var utils = _dereq_('../utils/');
 
 /**
  * Base class for A-Frame that manages loading of objects.
@@ -56264,7 +56702,7 @@ module.exports = registerElement('a-node', {
       value: function () {
         var mixins = this.getAttribute('mixin');
 
-        this.sceneEl = document.querySelector('a-scene');
+        this.sceneEl = this.closest('a-scene');
         this.emit('nodeready', {}, false);
         if (mixins) { this.updateMixins(mixins); }
       }
@@ -56273,6 +56711,25 @@ module.exports = registerElement('a-node', {
     attributeChangedCallback: {
       value: function (attr, oldVal, newVal) {
         if (attr === 'mixin') { this.updateMixins(newVal, oldVal); }
+      }
+    },
+
+    /**
+     * returns the first element that matches a CSS
+     * selector by traversing up the DOM tree starting
+     * from (and including) the receiver element.
+     * @param {string} selector - CSS selector of the matcched element
+     */
+    closest: {
+      value: function closest (selector) {
+        var matches = this.matches || this.mozMatchesSelector ||
+          this.msMatchesSelector || this.oMatchesSelector || this.webkitMatchesSelector;
+        var element = this;
+        while (element) {
+          if (matches.call(element, selector)) { break; }
+          element = element.parentElement;
+        }
+        return element;
       }
     },
 
@@ -56468,9 +56925,9 @@ module.exports = registerElement('a-node', {
   })
 });
 
-},{"../utils/":58,"./a-register-element":51}],51:[function(require,module,exports){
+},{"../utils/":60,"./a-register-element":52}],52:[function(_dereq_,module,exports){
 // Polyfill `document.registerElement`.
-require('document-register-element');
+_dereq_('document-register-element');
 
 /*
  ------------------------------------------------------------
@@ -56635,19 +57092,19 @@ function copyProperties (source, destination) {
   });
 }
 
-var ANode = require('./a-node');
-var AEntity = require('./a-entity');
+var ANode = _dereq_('./a-node');
+var AEntity = _dereq_('./a-entity');
 
-},{"./a-entity":48,"./a-node":50,"document-register-element":10}],52:[function(require,module,exports){
+},{"./a-entity":49,"./a-node":51,"document-register-element":10}],53:[function(_dereq_,module,exports){
 /* global MessageChannel, Promise */
-var re = require('./a-register-element');
-var RStats = require('../../lib/vendor/rStats');
-var THREE = require('../../lib/three');
-var TWEEN = require('tween.js');
-var utils = require('../utils/');
-var AEntity = require('./a-entity');
-var ANode = require('./a-node');
-var Wakelock = require('../../lib/vendor/wakelock/wakelock');
+var re = _dereq_('./a-register-element');
+var RStats = _dereq_('../../lib/vendor/rStats');
+var THREE = _dereq_('../../lib/three');
+var TWEEN = _dereq_('tween.js');
+var utils = _dereq_('../utils/');
+var AEntity = _dereq_('./a-entity');
+var ANode = _dereq_('./a-node');
+var Wakelock = _dereq_('../../lib/vendor/wakelock/wakelock');
 
 var dummyDolly = new THREE.Object3D();
 var controls = new THREE.VRControls(dummyDolly);
@@ -56693,44 +57150,49 @@ var AScene = module.exports = registerElement('a-scene', {
         this.insideIframe = window.top !== window.self;
         this.insideLoader = false;
         this.isScene = true;
-        this.object3D = AScene.scene || new THREE.Scene();
-        AScene.scene = this.object3D;
+        this.object3D = new THREE.Scene();
         this.init();
       }
     },
 
     init: {
       value: function () {
+        this.isMobile = isMobile;
         this.behaviors = [];
         this.materials = {};
-        this.stopped = true;
+        this.paused = true;
         this.hasLoaded = false;
-      }
+        this.originalHTML = this.innerHTML;
+        this.setupCanvas();
+        this.setupRenderer();
+        this.resizeCanvas();
+        this.setupDefaultLights();
+        this.setupDefaultCamera();
+      },
+      writable: true
     },
 
     attachedCallback: {
       value: function () {
-        this.isMobile = isMobile;
-        var resizeCanvas = this.resizeCanvas.bind(this);
-
-        if (isMobile) {
+        if (this.isMobile) {
           injectMetaTags();
           this.wakelock = new Wakelock();
         }
-
-        this.setupStats();
-        this.setupCanvas();
-        this.setupKeyboardShortcuts();
-        this.setupRenderer();
-        this.setupDefaultLights();
-        this.attachFullscreenListeners();
-        this.attachOrientationListeners();
-        this.start();
-
-        // For Chrome (https://github.com/aframevr/aframe-core/issues/321).
-        window.addEventListener('load', resizeCanvas);
+        this.attachEventListeners();
+        this.play();
       },
       writable: window.debug
+    },
+
+    attachEventListeners: {
+      value: function () {
+        var resizeCanvas = this.resizeCanvas.bind(this);
+        this.setupKeyboardShortcuts();
+        this.attachFullscreenListeners();
+        this.attachOrientationListeners();
+        // For Chrome (https://github.com/aframevr/aframe-core/issues/321).
+        window.addEventListener('load', resizeCanvas);
+      }
     },
 
     /**
@@ -56914,22 +57376,16 @@ var AScene = module.exports = registerElement('a-scene', {
      * @param {object} el - object holding an entity with a camera component or THREE camera.
      */
     setActiveCamera: {
-      value: function (camera) {
+      value: function (newCamera) {
         var defaultCameraWrapper = document.querySelector('[' + DEFAULT_CAMERA_ATTR + ']');
         var defaultCameraEl = defaultCameraWrapper && defaultCameraWrapper.querySelector('[camera]');
-        var newCamera = camera || this.camera;
-        var newCameraEl;
         if (newCamera instanceof AEntity) {
           newCamera.setAttribute('camera', 'active', true);
-          newCameraEl = newCamera;
-          if (newCamera !== defaultCameraEl) {
-            this.removeDefaultCamera();
-          }
-        } else if (newCamera instanceof THREE.Camera) {
-          newCameraEl = newCamera.el;
-          this.camera = newCamera;
+          if (newCamera !== defaultCameraEl) { this.removeDefaultCamera(); }
+          return;
         }
-        this.updateCameras(newCameraEl);
+        this.camera = newCamera;
+        this.updateCameras();
       }
     },
 
@@ -56938,18 +57394,27 @@ var AScene = module.exports = registerElement('a-scene', {
      * @type object - activeCamera - The camera used by the renderer
      */
     updateCameras: {
-      value: function (activeCamera) {
+      value: function () {
+        var activeCamera = this.camera;
+        var activeCameraEl = activeCamera && activeCamera.el;
         var cameraEl;
         var sceneCameras = this.querySelectorAll('[camera]');
         var i;
+        if (!activeCamera) {
+          activeCameraEl = sceneCameras[sceneCameras.length - 1];
+          activeCameraEl.setAttribute('camera', 'active', true);
+          return;
+        }
+
         for (i = 0; i < sceneCameras.length; ++i) {
           cameraEl = sceneCameras[i];
-          if (activeCamera === cameraEl) {
-            activeCamera.start();
+
+          if (activeCameraEl === cameraEl) {
+            if (!this.paused) { activeCameraEl.play(); }
             continue;
           }
           cameraEl.setAttribute('camera', 'active', false);
-          cameraEl.stop();
+          cameraEl.pause();
         }
       }
     },
@@ -57029,7 +57494,8 @@ var AScene = module.exports = registerElement('a-scene', {
         camera.updateProjectionMatrix();
         // Notify the renderer of the size change
         this.renderer.setSize(size.width, size.height, true);
-      }
+      },
+      writable: window.debug
     },
 
     /**
@@ -57081,14 +57547,23 @@ var AScene = module.exports = registerElement('a-scene', {
 
     setupCanvas: {
       value: function () {
-        var canvas = this.canvas = document.createElement('canvas');
+        var canvasSelector = this.getAttribute('canvas');
+        var canvas;
+
+        if (canvasSelector) {
+          canvas = this.canvas = document.querySelector(canvasSelector);
+        } else {
+          canvas = this.canvas = document.createElement('canvas');
+          this.appendChild(canvas);
+        }
         canvas.classList.add('a-canvas');
         // Prevents overscroll on mobile devices.
         canvas.addEventListener('touchmove', function (evt) {
           evt.preventDefault();
         });
-        document.body.appendChild(canvas);
+
         window.addEventListener('resize', this.resizeCanvas.bind(this), false);
+        return canvas;
       }
     },
 
@@ -57100,16 +57575,11 @@ var AScene = module.exports = registerElement('a-scene', {
      * entities at the origin (0, 0, 0) are well-centered.
      */
     setupDefaultCamera: {
-      value: function (loaded) {
+      value: function () {
         var cameraWrapperEl;
         var defaultCamera;
         var sceneCameras = this.querySelectorAll('[camera]');
-        if (sceneCameras.length !== 0) {
-          sceneCameras[sceneCameras.length - 1].setAttribute('camera', 'active', true);
-          loaded();
-        }
-
-        if (this.camera) { return; }
+        if (sceneCameras.length !== 0) { return; }
 
         // DOM calls to create camera.
         cameraWrapperEl = document.createElement('a-entity');
@@ -57120,7 +57590,6 @@ var AScene = module.exports = registerElement('a-scene', {
         defaultCamera.setAttribute('wasd-controls');
         defaultCamera.setAttribute('look-controls');
         cameraWrapperEl.appendChild(defaultCamera);
-        cameraWrapperEl.addEventListener('loaded', loaded);
         this.appendChild(cameraWrapperEl);
       }
     },
@@ -57220,8 +57689,6 @@ var AScene = module.exports = registerElement('a-scene', {
         // at runttime we would have to recreate the whole context
         var antialias = this.getAttribute('antialias') === 'true';
         var renderer = this.renderer = this.monoRenderer =
-          (AScene && AScene.renderer) ||
-          // To prevent creating multiple rendering contexts.
           new THREE.WebGLRenderer({
             canvas: canvas,
             antialias: antialias,
@@ -57277,32 +57744,26 @@ var AScene = module.exports = registerElement('a-scene', {
      * Handler attached to elements to help scene know when to kick off.
      * Scene waits for all entities to load.
      */
-    start: {
+    play: {
       value: function () {
-        if (this.renderStarted) { return; }
+        if (this.renderStarted) {
+          AEntity.prototype.play.call(this);
+          return;
+        }
 
         this.addEventListener('loaded', function () {
           var self = this;
           if (this.renderStarted) { return; }
 
           this.setupLoader();
-          this.resizeCanvas();
-
-          if (!this.camera) {
-            this.setupDefaultCamera(start);
-          } else {
-            start();
-          }
-
-          function start () {
-            AEntity.prototype.start.call(self);
-            self.originalHTML = self.originalHTML || self.innerHTML;
-            // Kick off render loop.
-            self.render();
-            self.renderStarted = true;
-            self.emit('renderstart');
-            self.checkUrlParameters();
-          }
+          AEntity.prototype.play.call(self);
+          self.setupStats();
+          self.resizeCanvas();
+          // Kick off render loop.
+          self.render();
+          self.renderStarted = true;
+          self.emit('renderstart');
+          self.checkUrlParameters();
         });
 
         AEntity.prototype.load.call(this);
@@ -57374,7 +57835,8 @@ var AScene = module.exports = registerElement('a-scene', {
         if (stats) { stats().update(); }
         this.animationFrameID = window.requestAnimationFrame(
           this.render.bind(this));
-      }
+      },
+      writable: window.debug
     },
 
     /**
@@ -57385,13 +57847,13 @@ var AScene = module.exports = registerElement('a-scene', {
     reload: {
       value: function (paused) {
         var self = this;
-        this.paused = !!paused;
+        if (paused) { this.pause(); }
         this.innerHTML = this.originalHTML;
         this.init();
-        ANode.prototype.load.call(this, start);
-        function start () {
+        ANode.prototype.load.call(this, play);
+        function play () {
           if (self.paused) { return; }
-          AEntity.prototype.start.call(self);
+          AEntity.prototype.play.call(self);
         }
       }
     }
@@ -57508,13 +57970,21 @@ function injectMetaTags () {
   headEl.appendChild(meta);
 }
 
-},{"../../lib/three":1,"../../lib/vendor/rStats":3,"../../lib/vendor/wakelock/wakelock":5,"../utils/":58,"./a-entity":48,"./a-node":50,"./a-register-element":51,"tween.js":24}],53:[function(require,module,exports){
-var debug = require('../utils/debug');
-var styleParser = require('style-attr');
-var utils = require('../utils/');
+},{"../../lib/three":1,"../../lib/vendor/rStats":3,"../../lib/vendor/wakelock/wakelock":5,"../utils/":60,"./a-entity":49,"./a-node":51,"./a-register-element":52,"tween.js":25}],54:[function(_dereq_,module,exports){
+/* global HTMLElement */
+var debug = _dereq_('../utils/debug');
+var propertyTypes = _dereq_('./propertyTypes').propertyTypes;
+var schema = _dereq_('./schema');
+var styleParser = _dereq_('style-attr');
+var utils = _dereq_('../utils/');
+
+var parseProperties = schema.parseProperties;
+var parseProperty = schema.parseProperty;
+var isSingleProp = schema.isSingleProperty;
+var processSchema = schema.process;
+var error = debug('core:register-component:error');
 
 var components = module.exports.components = {};  // Keep track of registered components.
-var error = debug('core:register-component:error');
 
 /**
  * Component class definition.
@@ -57540,10 +58010,10 @@ var error = debug('core:register-component:error');
  * @member {function} stringify
  */
 var Component = module.exports.Component = function (el) {
-  var attrs = el.getAttribute(this.name);
+  var rawData = HTMLElement.prototype.getAttribute.call(el, this.name);
   this.el = el;
   this.data = {};
-  this.parseProperties(attrs);
+  this.buildData(this.parse(rawData));
   this.init();
   this.update();
 };
@@ -57566,13 +58036,13 @@ Component.prototype = {
    * Called to start any dynamic behavior
    * like animations, AI, physics.
    */
-  start: function () { /* no-op */ },
+  play: function () { /* no-op */ },
 
   /**
    * Called to stop any dynamic behavior
    * like animations, AI, physics.
    */
-  stop: function () { /* no-op */ },
+  pause: function () { /* no-op */ },
 
   /**
    * Update handler. Similar to attributeChangedCallback.
@@ -57591,32 +58061,45 @@ Component.prototype = {
   remove: function () { /* no-op */ },
 
   /**
-   * Describes how the component should deserialize HTML attribute into data.
-   * Can be overridden by the component.
+   * Parses each property based on property type.
+   * If component is single-property, then parses the single property value.
    *
-   * The default parsing is parsing style-like strings, camelCasing keys for
-   * error-tolerance (`max-value` ~= `maxValue`).
-   *
-   * @param {string} value - HTML attribute.
-   * @returns {object} Data.
+   * @param {string} value - HTML attribute value.
+   * @returns {object} Component data.
    */
   parse: function (value) {
-    if (typeof value !== 'string') { return value; }
-    return transformKeysToCamelCase(styleParser.parse(value));
+    var typeName;
+    var type;
+
+    if (isSingleProp(this.schema)) {
+      typeName = this.schema.type;
+      type = propertyTypes[typeName];
+      if (type) { return type.parse.call(this, value); }
+      return error(typeName + ' is not a valid type.');
+    }
+
+    return objectParse(value);
   },
 
   /**
-   * Describes how the component should serialize data to a string to update the DOM.
-   * Can be overridden by the component.
-   *
-   * The default stringify is to a style-like string.
+   * Stringifies each property based on property type.
+   * If component is single-property, then stringifies the single property value.
    *
    * @param {object} data
    * @returns {string}
    */
   stringify: function (data) {
-    if (typeof data !== 'object') { return data; }
-    return styleParser.stringify(data);
+    var typeName;
+    var type;
+
+    if (isSingleProp(this.schema)) {
+      typeName = this.schema.type;
+      type = propertyTypes[typeName];
+      if (type) { return type.stringify.call(this, data); }
+      return error(typeName + ' is not a valid type.');
+    }
+
+    return objectStringify(data);
   },
 
   /**
@@ -57631,17 +58114,23 @@ Component.prototype = {
   },
 
   /**
-   * Called when new data is coming from the entity (e.g., attributeChangedCb)
+   * Called when new value is coming from the entity (e.g., attributeChangedCb)
    * or from its mixins. Does some parsing and applying before updating the
    * component.
    * Does not update if data has not changed.
+   *
+   * @param {string} value - HTML attribute value.
    */
-  updateProperties: function (newData) {
-    var previousData = extendWithCheck({}, this.data);
-    this.parseProperties(newData);
+  updateProperties: function (value) {
+    var isSinglePropSchema = isSingleProp(this.schema);
+    var previousData = extendProperties({}, this.data, isSinglePropSchema);
+    this.buildData(this.parse(value));
+
     // Don't update if properties haven't changed
-    if (utils.deepEqual(previousData, this.data)) { return; }
+    if (!isSinglePropSchema && utils.deepEqual(previousData, this.data)) { return; }
+
     this.update(previousData);
+
     this.el.emit('componentchanged', {
       name: this.name,
       newData: this.getData(),
@@ -57659,34 +58148,43 @@ Component.prototype = {
    * 1. Defaults data
    * 2. Mixin data.
    * 3. Attribute data.
+   *
    * Finally coerce the data to the types of the defaults.
    */
-  parseProperties: function (newData) {
+  buildData: function (newData) {
     var self = this;
     var data = {};
     var schema = self.schema;
+    var isSinglePropSchema = isSingleProp(schema);
     var el = self.el;
     var mixinEls = el.mixinEls;
     var name = self.name;
 
     // 1. Default values (lowest precendence).
-    Object.keys(schema).forEach(applyDefault);
-    function applyDefault (key) {
-      data[key] = schema[key].default;
+    if (isSinglePropSchema) {
+      data = schema.default;
+    } else {
+      Object.keys(schema).forEach(function applyDefault (key) {
+        data[key] = schema[key].default;
+      });
     }
 
     // 2. Mixin values.
     mixinEls.forEach(applyMixin);
     function applyMixin (mixinEl) {
       var mixinData = mixinEl.getAttribute(name);
-      data = extendWithCheck(data, mixinData);
+      extendProperties(data, mixinData, isSinglePropSchema);
     }
 
     // 3. Attribute values (highest precendence).
-    data = extendWithCheck(data, newData);
+    data = extendProperties(data, newData, isSinglePropSchema);
 
-    // Coerce to the type of the defaults.
-    this.data = utils.coerce(data, schema);
+    // Parse and coerce using the schema.
+    if (isSinglePropSchema) {
+      this.data = parseProperty(data, schema);
+    } else {
+      this.data = parseProperties(data, schema);
+    }
   }
 };
 
@@ -57722,24 +58220,47 @@ module.exports.registerComponent = function (name, definition) {
     Component: NewComponent,
     dependencies: NewComponent.prototype.dependencies,
     parse: NewComponent.prototype.parse.bind(NewComponent.prototype),
-    schema: NewComponent.prototype.schema,
-    stringify: NewComponent.prototype.stringify.bind(NewComponent.prototype)
+    schema: processSchema(NewComponent.prototype.schema),
+    stringify: NewComponent.prototype.stringify.bind(NewComponent.prototype),
+    type: NewComponent.prototype.type
   };
   return NewComponent;
 };
 
 /**
-* Object extending, but checks if `source` is an object first.
-* If not, `source` is a primitive and we don't do any extending.
+ * Deserializes style-like string into an object of properties.
+ *
+ * @param {string} value - HTML attribute value.
+ * @returns {object} Property data.k
+ */
+function objectParse (value) {
+  var parsedData;
+  if (typeof value !== 'string') { return value; }
+  parsedData = styleParser.parse(value);
+  return transformKeysToCamelCase(parsedData);
+}
+
+/**
+ * Serialize an object of properties into a style-like string.
+ *
+ * @param {object} data - Property data.
+ * @returns {string}
+ */
+function objectStringify (data) {
+  if (typeof data === 'string') { return data; }
+  return styleParser.stringify(data);
+}
+
+/**
+* Object extending with checking for single-property schema.
 *
 * @param dest - Destination object or value.
 * @param source - Source object or value
+* @param {boolean} isSinglePropSchema - Whether or not schema is only a single property.
 * @returns Overridden object or value.
 */
-function extendWithCheck (dest, source) {
-  var isSourceObject = typeof source === 'object';
-  if (source === null) { return dest; }
-  if (!isSourceObject) {
+function extendProperties (dest, source, isSinglePropSchema) {
+  if (isSinglePropSchema) {
     if (source === undefined) { return dest; }
     return source;
   }
@@ -57774,28 +58295,210 @@ function transformKeysToCamelCase (obj) {
   return camelCaseObj;
 }
 
-},{"../utils/":58,"../utils/debug":57,"style-attr":17}],54:[function(require,module,exports){
-require('es6-promise').polyfill();  // Polyfill `Promise`.
-require('present');  // Polyfill `performance.now()`.
+},{"../utils/":60,"../utils/debug":59,"./propertyTypes":55,"./schema":56,"style-attr":17}],55:[function(_dereq_,module,exports){
+var coordinates = _dereq_('../utils/coordinates');
+var debug = _dereq_('debug');
 
-require('../style/aframe-core.css');
-require('../style/rStats.css');
+var error = debug('core:propertyTypes:warn');
+
+var propertyTypes = module.exports.propertyTypes = {};
+
+// Built-in property types.
+registerPropertyType('boolean', false, boolParse);
+registerPropertyType('int', 0, intParse);
+registerPropertyType('number', 0, numberParse);
+registerPropertyType('selector', '', selectorParse, selectorStringify);
+registerPropertyType('string', '', defaultParse, defaultStringify);
+registerPropertyType('vec3', { x: 0, y: 0, z: 0 }, coordinates.parse, coordinates.stringify);
+
+/**
+ * Register a parser for re-use such that when someone uses `type` in the schema,
+ * `schema.process` will set the property `parse` and `stringify`.
+ *
+ * @param {string} type - Type name.
+ * @param [defaultValue=null] -
+ *   Default value to use if component does not define default value.
+ * @param {function} [parse=defaultParse] - Parse string function.
+ * @param {function} [stringify=defaultStringify] - Stringify to DOM function.
+ */
+function registerPropertyType (type, defaultValue, parse, stringify) {
+  if ('type' in propertyTypes) {
+    error('Property type "' + type + '" is already registered.');
+    return;
+  }
+
+  propertyTypes[type] = {
+    default: defaultValue,
+    parse: parse || defaultParse,
+    stringify: stringify || defaultStringify
+  };
+}
+module.exports.registerPropertyType = registerPropertyType;
+
+function defaultParse (value) {
+  return value;
+}
+
+function defaultStringify (value) {
+  return value.toString();
+}
+
+function boolParse (value) {
+  return value !== 'false' && value !== false;
+}
+
+function intParse (value) {
+  return parseInt(value, 10);
+}
+
+function numberParse (value) {
+  return parseFloat(value, 10);
+}
+
+function selectorParse (value) {
+  if (!value) { return null; }
+  return document.querySelector(value);
+}
+
+function selectorStringify (el) {
+  // Currently no way to infer the selector used for this component.
+  if (el) { return '#' + el.getAttribute('id'); }
+  return '';
+}
+
+},{"../utils/coordinates":58,"debug":8}],56:[function(_dereq_,module,exports){
+var debug = _dereq_('debug');
+var propertyTypes = _dereq_('./propertyTypes').propertyTypes;
+
+var warn = debug('core:schema:warn');
+
+/**
+ * A schema is classified as a schema for a single property if:
+ * - `type` is defined on the schema as a string.
+ * - OR `default` is defined on the schema, as a reserved keyword.
+ * - OR schema is empty.
+ */
+function isSingleProperty (schema) {
+  if ('type' in schema) {
+    return typeof schema.type === 'string';
+  }
+  return 'default' in schema || Object.keys(schema).length === 0;
+}
+module.exports.isSingleProperty = isSingleProperty;
+
+/**
+ * Build step to schema to use `type` to inject default value, parser, and stringifier.
+ *
+ * @param {object} schema
+ * @returns {object} Schema.
+ */
+module.exports.process = function (schema) {
+  // For single property schema, run processPropDefinition over the whole schema.
+  if (isSingleProperty(schema)) {
+    return processPropertyDefinition(schema);
+  }
+
+  // For multi-property schema, run processPropDefinition over each property definition.
+  Object.keys(schema).forEach(function (propName) {
+    schema[propName] = processPropertyDefinition(schema[propName]);
+  });
+  return schema;
+};
+
+/**
+ * Inject default value, parser, stringifier for single property.
+ */
+function processPropertyDefinition (propDefinition) {
+  var propType;
+  var defaultVal = propDefinition.default;
+  var typeName = propDefinition.type;
+
+  if (!propDefinition.type) {
+    if (defaultVal !== undefined && ['boolean', 'number'].indexOf(typeof defaultVal) !== -1) {
+      // Type inference.
+      typeName = typeof defaultVal;
+    } else {
+      // Fall back to string.
+      typeName = 'string';
+    }
+  } else if (propDefinition.type === 'bool') {
+    typeName = 'boolean';
+  } else if (propDefinition.type === 'float') {
+    typeName = 'number';
+  }
+
+  propType = propertyTypes[typeName];
+
+  if (!propType) {
+    warn('Unknown property type: ' + typeName);
+    return propDefinition;
+  }
+
+  propDefinition.parse = propType.parse;
+  propDefinition.stringify = propType.stringify;
+  propDefinition.type = typeName;
+  if (!('default' in propDefinition)) {
+    propDefinition.default = propType.default;
+  }
+
+  return propDefinition;
+}
+module.exports.processPropertyDefinition = processPropertyDefinition;
+
+/**
+ * If `value` is object, parse values of `val` into types defined by `schema`.
+ *
+ * @param {object|string} value - value(s) to coerce.
+ * @param {object} schema - Object which values will be used to coerce to.
+ * @returns Coerced value or object.
+ */
+module.exports.parseProperties = function (propData, schema) {
+  Object.keys(schema).forEach(function (propName) {
+    var propDefinition = schema[propName];
+    if (!propDefinition) {
+      warn('Unknown component property: ' + propName);
+      return;
+    }
+
+    var propValue = propData[propName];
+    propValue = propValue === undefined ? propDefinition.default : propValue;
+    propData[propName] = parseProperty(propValue, propDefinition);
+  });
+
+  return propData;
+};
+
+function parseProperty (value, propDefinition) {
+  // Already parsed by component `buildData` setting default value.
+  // TODO: Move that logic to the schema.
+  if (typeof value !== 'string') { return value; }
+  if (typeof value === 'undefined') { return value; }
+  return propDefinition.parse(value);
+}
+module.exports.parseProperty = parseProperty;
+
+},{"./propertyTypes":55,"debug":8}],57:[function(_dereq_,module,exports){
+_dereq_('es6-promise').polyfill();  // Polyfill `Promise`.
+_dereq_('present');  // Polyfill `performance.now()`.
+
+_dereq_('../style/aframe-core.css');
+_dereq_('../style/rStats.css');
 
 // Required before `AEntity` so that all components are registered.
-var AScene = require('./core/a-scene');
-var components = require('./core/component').components;
-var debug = require('./utils/debug');
-var registerComponent = require('./core/component').registerComponent;
-var registerElement = require('./core/a-register-element');
+var AScene = _dereq_('./core/a-scene');
+var components = _dereq_('./core/component').components;
+var debug = _dereq_('./utils/debug');
+var registerComponent = _dereq_('./core/component').registerComponent;
+var registerElement = _dereq_('./core/a-register-element');
 // Exports THREE to window so three.js can be used without alteration.
-var THREE = window.THREE = require('../lib/three');
+var THREE = window.THREE = _dereq_('../lib/three');
 
-var pkg = require('../package');
-var utils = require('./utils/');
+var pkg = _dereq_('../package');
+var utils = _dereq_('./utils/');
 
-require('./components/index');  // Register core components.
-var ANode = require('./core/a-node');
-var AEntity = require('./core/a-entity');  // Depends on ANode and core components.
+_dereq_('./components/index');  // Register core components.
+var ANode = _dereq_('./core/a-node');
+var AEntity = _dereq_('./core/a-entity');  // Depends on ANode and core components.
 
 // Webvr polyfill configuration.
 window.hasNonPolyfillWebVRSupport = !!navigator.getVRDevices;
@@ -57803,13 +58506,13 @@ window.WebVRConfig = {
   TOUCH_PANNER_DISABLED: true,
   MOUSE_KEYBOARD_CONTROLS_DISABLED: true
 };
-require('webvr-polyfill');
+_dereq_('webvr-polyfill');
 
-require('./core/a-animation');
-require('./core/a-assets');
-require('./core/a-cubemap');
-require('./core/a-mixin');
-require('./core/a-scene');
+_dereq_('./core/a-animation');
+_dereq_('./core/a-assets');
+_dereq_('./core/a-cubemap');
+_dereq_('./core/a-mixin');
+_dereq_('./core/a-scene');
 
 module.exports = {
   AEntity: AEntity,
@@ -57819,68 +58522,13 @@ module.exports = {
   debug: debug,
   registerComponent: registerComponent,
   registerElement: registerElement,
+  registerPropertyType: _dereq_('./core/propertyTypes').registerPropertyType,
   THREE: THREE,
   utils: utils,
   version: pkg.version
 };
 
-},{"../lib/three":1,"../package":26,"../style/aframe-core.css":60,"../style/rStats.css":61,"./components/index":31,"./core/a-animation":45,"./core/a-assets":46,"./core/a-cubemap":47,"./core/a-entity":48,"./core/a-mixin":49,"./core/a-node":50,"./core/a-register-element":51,"./core/a-scene":52,"./core/component":53,"./utils/":58,"./utils/debug":57,"es6-promise":11,"present":14,"webvr-polyfill":25}],55:[function(require,module,exports){
-var coordinates = require('./coordinates');
-var utils = require('./index');
-
-/**
- * If `value` is object, coerce values of `val` into types defined by `schema`.
- * If `value` is string and `schemaAttr` defined, coerces `value` into the value in `schema`
- * pointed to by `schemaAttr`.
- *
- * @param {object|string} value - value(s) to coerce.
- * @param {object} schema - Object which values will be used to coerce to.
- * @param {string} schemaAttr -
- *   In case `value` is a string, `schemaAttr` signifies which value in `schema` to coerce to.
- * @returns Coerced value or object.
- */
-module.exports = function (value, schema, schemaAttr) {
-  var obj = value;
-
-  // Batch coerce.
-  if (typeof value === 'object') {
-    Object.keys(obj).forEach(function (key) {
-      var attrSchema = schema[key];
-      var schemaValue;
-      if (!attrSchema) {
-        utils.warn('Unknown component property: ' + key);
-        return;
-      }
-      schemaValue = attrSchema.default;
-      if (schemaValue === undefined) { return; }
-      obj[key] = coerceValue(obj[key], schemaValue);
-    });
-    return obj;
-  }
-
-  // Handle case: string.
-  return coerceValue(value, schema.default);
-
-  function coerceValue (value, targetValue) {
-    if (typeof value !== 'string') { return value; }
-
-    switch (typeof targetValue) {
-      case 'boolean':
-        return value === 'true';
-      case 'number':
-        return parseFloat(value);
-      case 'object':
-        if (utils.deepEqual(Object.keys(targetValue), ['x', 'y', 'z'])) {
-          return coordinates.parse(value);
-        }
-        return value;
-      default:
-        return value;
-    }
-  }
-};
-
-},{"./coordinates":56,"./index":58}],56:[function(require,module,exports){
+},{"../lib/three":1,"../package":27,"../style/aframe-core.css":62,"../style/rStats.css":63,"./components/index":32,"./core/a-animation":46,"./core/a-assets":47,"./core/a-cubemap":48,"./core/a-entity":49,"./core/a-mixin":50,"./core/a-node":51,"./core/a-register-element":52,"./core/a-scene":53,"./core/component":54,"./core/propertyTypes":55,"./utils/":60,"./utils/debug":59,"es6-promise":11,"present":14,"webvr-polyfill":26}],58:[function(_dereq_,module,exports){
 // Coordinate string regex. Handles negative, positive, and decimals.
 var regex = /\s*(-?\d*\.{0,1}\d+)\s*(-?\d*\.{0,1}\d+)\s*(-?\d*\.{0,1}\d+)\s*/;
 module.exports.regex = regex;
@@ -57893,15 +58541,28 @@ module.exports.regex = regex;
  * @param {string} defaults - fallback value.
  * @returns {object} An object with keys [x, y, z].
  */
-function parse (value, schema) {
+function parse (value, defaultCoordinate) {
   var coordinate;
-  schema = schema || {};
-  if (typeof value !== 'string' || value === null) { return value; }
+
+  if (value && typeof value === 'object') { return value; }
+
+  if (!defaultCoordinate && this.schema) {
+    if ('default' in this.schema) {
+      defaultCoordinate = this.schema.default;
+    } else {
+      defaultCoordinate = this.schema;
+    }
+  }
+
+  if (typeof value !== 'string' || value === null) {
+    return defaultCoordinate;
+  }
+
   coordinate = value.trim().replace(/\s+/g, ' ').split(' ');
   return {
-    x: parseFloat(coordinate[0] || schema.x.default),
-    y: parseFloat(coordinate[1] || schema.y.default),
-    z: parseFloat(coordinate[2] || schema.z.default)
+    x: parseFloat(coordinate[0] || defaultCoordinate.x),
+    y: parseFloat(coordinate[1] || defaultCoordinate.y),
+    z: parseFloat(coordinate[2] || defaultCoordinate.z)
   };
 }
 module.exports.parse = parse;
@@ -57910,12 +58571,12 @@ module.exports.parse = parse;
  * Stringifies coordinates from an object with keys [x y z].
  * Example: {x: 3, y: 10, z: -5} to "3 10 -5".
  *
- * @param {object|string} val - An object with keys [x y z].
+ * @param {object|string} data - An object with keys [x y z].
  * @returns {string} An "x y z" string.
  */
-function stringify (value) {
-  if (typeof value !== 'object') { return value; }
-  return [value.x, value.y, value.z].join(' ');
+function stringify (data) {
+  if (typeof data !== 'object') { return data; }
+  return [data.x, data.y, data.z].join(' ');
 }
 module.exports.stringify = stringify;
 
@@ -57926,21 +58587,10 @@ module.exports.isCoordinate = function (value) {
   return regex.test(value);
 };
 
-/**
- * Prototype mixin for coordinate-only components.
- */
-module.exports.componentMixin = {
-  parse: function (value) {
-    return parse(value, this.schema);
-  },
-
-  stringify: stringify
-};
-
-},{}],57:[function(require,module,exports){
+},{}],59:[function(_dereq_,module,exports){
 (function (process){
-var debugLib = require('debug');
-var extend = require('object-assign');
+var debugLib = _dereq_('debug');
+var extend = _dereq_('object-assign');
 
 var settings = {
   colors: {
@@ -58041,15 +58691,14 @@ if (process.browser) { window.logs = debug; }
 
 module.exports = debug;
 
-}).call(this,require('_process'))
+}).call(this,_dereq_('_process'))
 
-},{"_process":15,"debug":8,"object-assign":13}],58:[function(require,module,exports){
+},{"_process":15,"debug":8,"object-assign":13}],60:[function(_dereq_,module,exports){
 /* global CustomEvent, location */
 /* Centralized place to reference utilities since utils is exposed to the user. */
-var objectAssign = require('object-assign');
+var objectAssign = _dereq_('object-assign');
 
-module.exports.coerce = require('./coerce');
-module.exports.coordinates = require('./coordinates');
+module.exports.coordinates = _dereq_('./coordinates');
 
 /**
  * Fires a custom DOM event.
@@ -58227,11 +58876,11 @@ module.exports.getUrlParameter = function (name) {
 };
 
 // Must be at bottom to avoid circular dependency.
-module.exports.srcLoader = require('./src-loader');
+module.exports.srcLoader = _dereq_('./src-loader');
 
-},{"./coerce":55,"./coordinates":56,"./src-loader":59,"object-assign":13}],59:[function(require,module,exports){
+},{"./coordinates":58,"./src-loader":61,"object-assign":13}],61:[function(_dereq_,module,exports){
 /* global Image */
-var debug = require('./debug');
+var debug = _dereq_('./debug');
 
 var warn = debug('utils:src-loader:warn');
 
@@ -58374,10 +59023,10 @@ module.exports = {
   validateCubemapSrc: validateCubemapSrc
 };
 
-},{"./debug":57}],60:[function(require,module,exports){
-var css = "html{bottom:0;left:0;position:fixed;right:0;top:0}body{height:100%;margin:0;overflow:hidden;padding:0;width:100%}.a-hidden{display:none!important}.a-canvas{height:100%;left:0;position:absolute;top:0;width:100%}a-assets,a-scene img,a-scene video{display:none}.a-enter-vr{align-items:flex-end;-webkit-align-items:flex-end;bottom:5px;display:flex;display:-webkit-flex;font-family:sans-serif,monospace;font-size:13px;font-weight:200;line-height:16px;height:72px;position:fixed;right:5px}.a-enter-vr-button{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20245.82%20141.73%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Emask%3C%2Ftitle%3E%3Cpath%20class%3D%22a%22%20d%3D%22M175.56%2C111.37c-22.52%2C0-40.77-18.84-40.77-42.07S153%2C27.24%2C175.56%2C27.24s40.77%2C18.84%2C40.77%2C42.07S198.08%2C111.37%2C175.56%2C111.37ZM26.84%2C69.31c0-23.23%2C18.25-42.07%2C40.77-42.07s40.77%2C18.84%2C40.77%2C42.07-18.26%2C42.07-40.77%2C42.07S26.84%2C92.54%2C26.84%2C69.31ZM27.27%2C0C11.54%2C0%2C0%2C12.34%2C0%2C28.58V110.9c0%2C16.24%2C11.54%2C30.83%2C27.27%2C30.83H99.57c2.17%2C0%2C4.19-1.83%2C5.4-3.7L116.47%2C118a8%2C8%2C0%2C0%2C1%2C12.52-.18l11.51%2C20.34c1.2%2C1.86%2C3.22%2C3.61%2C5.39%2C3.61h72.29c15.74%2C0%2C27.63-14.6%2C27.63-30.83V28.58C245.82%2C12.34%2C233.93%2C0%2C218.19%2C0H27.27Z%22%2F%3E%3C%2Fsvg%3E) 50% 50%/70% 70% no-repeat rgba(0,0,0,.35);border:0;bottom:0;color:#FFF;cursor:pointer;height:50px;transition:background .05s ease;-webkit-transition:background .05s ease;width:60px;z-index:999999}.a-enter-vr-button:active,.a-enter-vr-button:hover{background-color:#666}[data-a-enter-vr-no-webvr] .a-enter-vr-button{border-color:#666;opacity:.65}[data-a-enter-vr-no-webvr] .a-enter-vr-button:active,[data-a-enter-vr-no-webvr] .a-enter-vr-button:hover{background-color:rgba(0,0,0,.35);cursor:not-allowed}.a-enter-vr-modal{background-color:#666;border-radius:0;color:#FFF;height:32px;opacity:0;margin-right:10px;padding:9px;width:280px;position:relative;transition:opacity .05s ease;-webkit-transition:opacity .05s ease}.a-enter-vr-modal:after{border-bottom:10px solid transparent;border-left:10px solid #666;border-top:10px solid transparent;display:inline-block;content:'';position:absolute;right:-5px;top:5px;width:0;height:0}.a-enter-vr-modal p{margin:0;display:inline}.a-enter-vr-modal p:after{content:' '}.a-enter-vr-modal a{color:#FFF;display:inline}[data-a-enter-vr-no-headset]:hover .a-enter-vr-modal,[data-a-enter-vr-no-webvr]:hover .a-enter-vr-modal{opacity:1}.a-orientation-modal{position:absolute;width:100%;height:100%;top:0;left:0;background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2090%2090%22%20enable-background%3D%22new%200%200%2090%2090%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20points%3D%220%2C0%200%2C0%200%2C0%20%22%3E%3C/polygon%3E%3Cg%3E%3Cpath%20d%3D%22M71.545%2C48.145h-31.98V20.743c0-2.627-2.138-4.765-4.765-4.765H18.456c-2.628%2C0-4.767%2C2.138-4.767%2C4.765v42.789%20%20%20c0%2C2.628%2C2.138%2C4.766%2C4.767%2C4.766h5.535v0.959c0%2C2.628%2C2.138%2C4.765%2C4.766%2C4.765h42.788c2.628%2C0%2C4.766-2.137%2C4.766-4.765V52.914%20%20%20C76.311%2C50.284%2C74.173%2C48.145%2C71.545%2C48.145z%20M18.455%2C16.935h16.344c2.1%2C0%2C3.808%2C1.708%2C3.808%2C3.808v27.401H37.25V22.636%20%20%20c0-0.264-0.215-0.478-0.479-0.478H16.482c-0.264%2C0-0.479%2C0.214-0.479%2C0.478v36.585c0%2C0.264%2C0.215%2C0.478%2C0.479%2C0.478h7.507v7.644%20%20%20h-5.534c-2.101%2C0-3.81-1.709-3.81-3.81V20.743C14.645%2C18.643%2C16.354%2C16.935%2C18.455%2C16.935z%20M16.96%2C23.116h19.331v25.031h-7.535%20%20%20c-2.628%2C0-4.766%2C2.139-4.766%2C4.768v5.828h-7.03V23.116z%20M71.545%2C73.064H28.757c-2.101%2C0-3.81-1.708-3.81-3.808V52.914%20%20%20c0-2.102%2C1.709-3.812%2C3.81-3.812h42.788c2.1%2C0%2C3.809%2C1.71%2C3.809%2C3.812v16.343C75.354%2C71.356%2C73.645%2C73.064%2C71.545%2C73.064z%22%3E%3C/path%3E%3Cpath%20d%3D%22M28.919%2C58.424c-1.466%2C0-2.659%2C1.193-2.659%2C2.66c0%2C1.466%2C1.193%2C2.658%2C2.659%2C2.658c1.468%2C0%2C2.662-1.192%2C2.662-2.658%20%20%20C31.581%2C59.617%2C30.387%2C58.424%2C28.919%2C58.424z%20M28.919%2C62.786c-0.939%2C0-1.703-0.764-1.703-1.702c0-0.939%2C0.764-1.704%2C1.703-1.704%20%20%20c0.94%2C0%2C1.705%2C0.765%2C1.705%2C1.704C30.623%2C62.022%2C29.858%2C62.786%2C28.919%2C62.786z%22%3E%3C/path%3E%3Cpath%20d%3D%22M69.654%2C50.461H33.069c-0.264%2C0-0.479%2C0.215-0.479%2C0.479v20.288c0%2C0.264%2C0.215%2C0.478%2C0.479%2C0.478h36.585%20%20%20c0.263%2C0%2C0.477-0.214%2C0.477-0.478V50.939C70.131%2C50.676%2C69.917%2C50.461%2C69.654%2C50.461z%20M69.174%2C51.417V70.75H33.548V51.417H69.174z%22%3E%3C/path%3E%3Cpath%20d%3D%22M45.201%2C30.296c6.651%2C0%2C12.233%2C5.351%2C12.551%2C11.977l-3.033-2.638c-0.193-0.165-0.507-0.142-0.675%2C0.048%20%20%20c-0.174%2C0.198-0.153%2C0.501%2C0.045%2C0.676l3.883%2C3.375c0.09%2C0.075%2C0.198%2C0.115%2C0.312%2C0.115c0.141%2C0%2C0.273-0.061%2C0.362-0.166%20%20%20l3.371-3.877c0.173-0.2%2C0.151-0.502-0.047-0.675c-0.194-0.166-0.508-0.144-0.676%2C0.048l-2.592%2C2.979%20%20%20c-0.18-3.417-1.629-6.605-4.099-9.001c-2.538-2.461-5.877-3.817-9.404-3.817c-0.264%2C0-0.479%2C0.215-0.479%2C0.479%20%20%20C44.72%2C30.083%2C44.936%2C30.296%2C45.201%2C30.296z%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E) center center/50% 50% no-repeat rgba(244,244,244,1)}.a-orientation-modal:after{content:\"Insert phone into Cardboard holder.\";color:#333;font-family:sans-serif,monospace;font-size:13px;text-align:center;position:absolute;width:100%;top:70%;transform:translateY(-70%)}.a-orientation-modal button{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M55.209%2C50l17.803-17.803c1.416-1.416%2C1.416-3.713%2C0-5.129c-1.416-1.417-3.713-1.417-5.129%2C0L50.08%2C44.872%20%20L32.278%2C27.069c-1.416-1.417-3.714-1.417-5.129%2C0c-1.417%2C1.416-1.417%2C3.713%2C0%2C5.129L44.951%2C50L27.149%2C67.803%20%20c-1.417%2C1.416-1.417%2C3.713%2C0%2C5.129c0.708%2C0.708%2C1.636%2C1.062%2C2.564%2C1.062c0.928%2C0%2C1.856-0.354%2C2.564-1.062L50.08%2C55.13l17.803%2C17.802%20%20c0.708%2C0.708%2C1.637%2C1.062%2C2.564%2C1.062s1.856-0.354%2C2.564-1.062c1.416-1.416%2C1.416-3.713%2C0-5.129L55.209%2C50z%22%3E%3C/path%3E%3C/svg%3E);width:50px;height:50px;border:none;text-indent:-9999px}@media (min-width:480px){.a-enter-vr{bottom:20px;right:20px}.a-enter-vr-modal{width:400px}}"; (require("browserify-css").createStyle(css, { "href": "style\\aframe-core.css"})); module.exports = css;
-},{"browserify-css":6}],61:[function(require,module,exports){
-var css = ".rs-base{background-color:#EF2D5E;border-radius:0;font-family:'Roboto Condensed',tahoma,sans-serif;font-size:10px;line-height:1.2em;opacity:.75;overflow:hidden;padding:10px;position:fixed;left:5px;top:5px;width:270px;z-index:10000}.rs-base.hidden{display:none}.rs-base h1{color:#fff;cursor:pointer;font-size:1.4em;font-weight:300;margin:0 0 5px;padding:0}.rs-group{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-direction:column-reverse;flex-direction:column-reverse}.rs-counter-base{align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;height:10px;-webkit-justify-content:space-between;justify-content:space-between;margin:2px 0}.rs-counter-id{font-weight:300;-webkit-box-ordinal-group:0;-webkit-order:0;order:0}.rs-counter-value{font-weight:300;-webkit-box-ordinal-group:1;-webkit-order:1;order:1;text-align:right;width:25px}.rs-canvas{-webkit-box-ordinal-group:2;-webkit-order:2;order:2}@media (min-width:480px){.rs-base{left:20px;top:20px}}"; (require("browserify-css").createStyle(css, { "href": "style\\rStats.css"})); module.exports = css;
-},{"browserify-css":6}]},{},[54])(54)
+},{"./debug":59}],62:[function(_dereq_,module,exports){
+var css = "html{bottom:0;left:0;position:fixed;right:0;top:0}body{height:100%;margin:0;overflow:hidden;padding:0;width:100%}.a-hidden{display:none!important}.a-canvas{height:100%;left:0;position:absolute;top:0;width:100%}a-assets,a-scene img,a-scene video{display:none}.a-enter-vr{align-items:flex-end;-webkit-align-items:flex-end;bottom:5px;display:flex;display:-webkit-flex;font-family:sans-serif,monospace;font-size:13px;font-weight:200;line-height:16px;height:72px;position:fixed;right:5px}.a-enter-vr-button{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20245.82%20141.73%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Emask%3C%2Ftitle%3E%3Cpath%20class%3D%22a%22%20d%3D%22M175.56%2C111.37c-22.52%2C0-40.77-18.84-40.77-42.07S153%2C27.24%2C175.56%2C27.24s40.77%2C18.84%2C40.77%2C42.07S198.08%2C111.37%2C175.56%2C111.37ZM26.84%2C69.31c0-23.23%2C18.25-42.07%2C40.77-42.07s40.77%2C18.84%2C40.77%2C42.07-18.26%2C42.07-40.77%2C42.07S26.84%2C92.54%2C26.84%2C69.31ZM27.27%2C0C11.54%2C0%2C0%2C12.34%2C0%2C28.58V110.9c0%2C16.24%2C11.54%2C30.83%2C27.27%2C30.83H99.57c2.17%2C0%2C4.19-1.83%2C5.4-3.7L116.47%2C118a8%2C8%2C0%2C0%2C1%2C12.52-.18l11.51%2C20.34c1.2%2C1.86%2C3.22%2C3.61%2C5.39%2C3.61h72.29c15.74%2C0%2C27.63-14.6%2C27.63-30.83V28.58C245.82%2C12.34%2C233.93%2C0%2C218.19%2C0H27.27Z%22%2F%3E%3C%2Fsvg%3E) 50% 50%/70% 70% no-repeat rgba(0,0,0,.35);border:0;bottom:0;color:#FFF;cursor:pointer;height:50px;transition:background .05s ease;-webkit-transition:background .05s ease;width:60px;z-index:999999}.a-enter-vr-button:active,.a-enter-vr-button:hover{background-color:#666}[data-a-enter-vr-no-webvr] .a-enter-vr-button{border-color:#666;opacity:.65}[data-a-enter-vr-no-webvr] .a-enter-vr-button:active,[data-a-enter-vr-no-webvr] .a-enter-vr-button:hover{background-color:rgba(0,0,0,.35);cursor:not-allowed}.a-enter-vr-modal{background-color:#666;border-radius:0;color:#FFF;height:32px;opacity:0;margin-right:10px;padding:9px;width:280px;position:relative;transition:opacity .05s ease;-webkit-transition:opacity .05s ease}.a-enter-vr-modal:after{border-bottom:10px solid transparent;border-left:10px solid #666;border-top:10px solid transparent;display:inline-block;content:'';position:absolute;right:-5px;top:5px;width:0;height:0}.a-enter-vr-modal p{margin:0;display:inline}.a-enter-vr-modal p:after{content:' '}.a-enter-vr-modal a{color:#FFF;display:inline}[data-a-enter-vr-no-headset]:hover .a-enter-vr-modal,[data-a-enter-vr-no-webvr]:hover .a-enter-vr-modal{opacity:1}.a-orientation-modal{position:absolute;width:100%;height:100%;top:0;left:0;background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2090%2090%22%20enable-background%3D%22new%200%200%2090%2090%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20points%3D%220%2C0%200%2C0%200%2C0%20%22%3E%3C/polygon%3E%3Cg%3E%3Cpath%20d%3D%22M71.545%2C48.145h-31.98V20.743c0-2.627-2.138-4.765-4.765-4.765H18.456c-2.628%2C0-4.767%2C2.138-4.767%2C4.765v42.789%20%20%20c0%2C2.628%2C2.138%2C4.766%2C4.767%2C4.766h5.535v0.959c0%2C2.628%2C2.138%2C4.765%2C4.766%2C4.765h42.788c2.628%2C0%2C4.766-2.137%2C4.766-4.765V52.914%20%20%20C76.311%2C50.284%2C74.173%2C48.145%2C71.545%2C48.145z%20M18.455%2C16.935h16.344c2.1%2C0%2C3.808%2C1.708%2C3.808%2C3.808v27.401H37.25V22.636%20%20%20c0-0.264-0.215-0.478-0.479-0.478H16.482c-0.264%2C0-0.479%2C0.214-0.479%2C0.478v36.585c0%2C0.264%2C0.215%2C0.478%2C0.479%2C0.478h7.507v7.644%20%20%20h-5.534c-2.101%2C0-3.81-1.709-3.81-3.81V20.743C14.645%2C18.643%2C16.354%2C16.935%2C18.455%2C16.935z%20M16.96%2C23.116h19.331v25.031h-7.535%20%20%20c-2.628%2C0-4.766%2C2.139-4.766%2C4.768v5.828h-7.03V23.116z%20M71.545%2C73.064H28.757c-2.101%2C0-3.81-1.708-3.81-3.808V52.914%20%20%20c0-2.102%2C1.709-3.812%2C3.81-3.812h42.788c2.1%2C0%2C3.809%2C1.71%2C3.809%2C3.812v16.343C75.354%2C71.356%2C73.645%2C73.064%2C71.545%2C73.064z%22%3E%3C/path%3E%3Cpath%20d%3D%22M28.919%2C58.424c-1.466%2C0-2.659%2C1.193-2.659%2C2.66c0%2C1.466%2C1.193%2C2.658%2C2.659%2C2.658c1.468%2C0%2C2.662-1.192%2C2.662-2.658%20%20%20C31.581%2C59.617%2C30.387%2C58.424%2C28.919%2C58.424z%20M28.919%2C62.786c-0.939%2C0-1.703-0.764-1.703-1.702c0-0.939%2C0.764-1.704%2C1.703-1.704%20%20%20c0.94%2C0%2C1.705%2C0.765%2C1.705%2C1.704C30.623%2C62.022%2C29.858%2C62.786%2C28.919%2C62.786z%22%3E%3C/path%3E%3Cpath%20d%3D%22M69.654%2C50.461H33.069c-0.264%2C0-0.479%2C0.215-0.479%2C0.479v20.288c0%2C0.264%2C0.215%2C0.478%2C0.479%2C0.478h36.585%20%20%20c0.263%2C0%2C0.477-0.214%2C0.477-0.478V50.939C70.131%2C50.676%2C69.917%2C50.461%2C69.654%2C50.461z%20M69.174%2C51.417V70.75H33.548V51.417H69.174z%22%3E%3C/path%3E%3Cpath%20d%3D%22M45.201%2C30.296c6.651%2C0%2C12.233%2C5.351%2C12.551%2C11.977l-3.033-2.638c-0.193-0.165-0.507-0.142-0.675%2C0.048%20%20%20c-0.174%2C0.198-0.153%2C0.501%2C0.045%2C0.676l3.883%2C3.375c0.09%2C0.075%2C0.198%2C0.115%2C0.312%2C0.115c0.141%2C0%2C0.273-0.061%2C0.362-0.166%20%20%20l3.371-3.877c0.173-0.2%2C0.151-0.502-0.047-0.675c-0.194-0.166-0.508-0.144-0.676%2C0.048l-2.592%2C2.979%20%20%20c-0.18-3.417-1.629-6.605-4.099-9.001c-2.538-2.461-5.877-3.817-9.404-3.817c-0.264%2C0-0.479%2C0.215-0.479%2C0.479%20%20%20C44.72%2C30.083%2C44.936%2C30.296%2C45.201%2C30.296z%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E) center center/50% 50% no-repeat rgba(244,244,244,1)}.a-orientation-modal:after{content:\"Insert phone into Cardboard holder.\";color:#333;font-family:sans-serif,monospace;font-size:13px;text-align:center;position:absolute;width:100%;top:70%;transform:translateY(-70%)}.a-orientation-modal button{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M55.209%2C50l17.803-17.803c1.416-1.416%2C1.416-3.713%2C0-5.129c-1.416-1.417-3.713-1.417-5.129%2C0L50.08%2C44.872%20%20L32.278%2C27.069c-1.416-1.417-3.714-1.417-5.129%2C0c-1.417%2C1.416-1.417%2C3.713%2C0%2C5.129L44.951%2C50L27.149%2C67.803%20%20c-1.417%2C1.416-1.417%2C3.713%2C0%2C5.129c0.708%2C0.708%2C1.636%2C1.062%2C2.564%2C1.062c0.928%2C0%2C1.856-0.354%2C2.564-1.062L50.08%2C55.13l17.803%2C17.802%20%20c0.708%2C0.708%2C1.637%2C1.062%2C2.564%2C1.062s1.856-0.354%2C2.564-1.062c1.416-1.416%2C1.416-3.713%2C0-5.129L55.209%2C50z%22%3E%3C/path%3E%3C/svg%3E);width:50px;height:50px;border:none;text-indent:-9999px}@media (min-width:480px){.a-enter-vr{bottom:20px;right:20px}.a-enter-vr-modal{width:400px}}"; (_dereq_("browserify-css").createStyle(css, { "href": "style\\aframe-core.css"})); module.exports = css;
+},{"browserify-css":6}],63:[function(_dereq_,module,exports){
+var css = ".rs-base{background-color:#EF2D5E;border-radius:0;font-family:'Roboto Condensed',tahoma,sans-serif;font-size:10px;line-height:1.2em;opacity:.75;overflow:hidden;padding:10px;position:fixed;left:5px;top:5px;width:270px;z-index:10000}.rs-base.hidden{display:none}.rs-base h1{color:#fff;cursor:pointer;font-size:1.4em;font-weight:300;margin:0 0 5px;padding:0}.rs-group{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-direction:column-reverse;flex-direction:column-reverse}.rs-counter-base{align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;height:10px;-webkit-justify-content:space-between;justify-content:space-between;margin:2px 0}.rs-counter-id{font-weight:300;-webkit-box-ordinal-group:0;-webkit-order:0;order:0}.rs-counter-value{font-weight:300;-webkit-box-ordinal-group:1;-webkit-order:1;order:1;text-align:right;width:25px}.rs-canvas{-webkit-box-ordinal-group:2;-webkit-order:2;order:2}@media (min-width:480px){.rs-base{left:20px;top:20px}}"; (_dereq_("browserify-css").createStyle(css, { "href": "style\\rStats.css"})); module.exports = css;
+},{"browserify-css":6}]},{},[57])(57)
 });
 //# sourceMappingURL=aframe-core.js.map
